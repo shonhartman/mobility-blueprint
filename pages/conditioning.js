@@ -2,10 +2,11 @@
 import { DotsVerticalIcon } from '@heroicons/react/solid'
 
 const projects = [
-  { name: 'Graph API', initials: 'GA', href: '#', members: 16, bgColor: 'bg-pink-600' },
-  { name: 'Component Design', initials: 'CD', href: '#', members: 12, bgColor: 'bg-purple-600' },
-  { name: 'Templates', initials: 'T', href: '#', members: 16, bgColor: 'bg-yellow-500' },
-  { name: 'React Components', initials: 'RC', href: '#', members: 8, bgColor: 'bg-green-500' },
+  { name: 'Lateral Lines', initials: 'LL', href: '#', exercises: 8, bgColor: 'bg-red-600' },
+  { name: 'Inner Lines', initials: 'IL', href: '#', exercises: 10, bgColor: 'bg-orange-500' },
+  { name: 'Front Line', initials: 'SFL', href: '#', exercises: 8, bgColor: 'bg-yellow-400' },
+  { name: 'Back Line', initials: 'BL', href: '#', exercises: 8, bgColor: 'bg-green-500' },
+  { name: 'Spiral Lines', initials: 'SPL', href: '#', exercises: 9, bgColor: 'bg-blue-400' }
 ]
 
 function classNames(...classes) {
@@ -14,9 +15,9 @@ function classNames(...classes) {
 
 export default function Conditioning() {
   return (
-    <div>
-      <h2 className="text-gray-500 text-xs font-medium uppercase tracking-wide">Pinned Projects</h2>
-      <ul role="list" className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+    <div className='container mx-auto mt-8'>
+      <h2 className="text-gray-600 text-xs font-medium uppercase tracking-wide">Meridians</h2>
+      <ul role="list" className="mt-3 grid grid-cols-1 gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-5">
         {projects.map((project) => (
           <li key={project.name} className="col-span-1 flex shadow-sm rounded-md">
             <div
@@ -32,7 +33,7 @@ export default function Conditioning() {
                 <a href={project.href} className="text-gray-900 font-medium hover:text-gray-600">
                   {project.name}
                 </a>
-                <p className="text-gray-500">{project.members} Members</p>
+                <p className="text-gray-500">{project.exercises} Exercises</p>
               </div>
               <div className="flex-shrink-0 pr-2">
                 <button
