@@ -1,0 +1,32 @@
+# Dependency directories
+/node_modules
+
+# Next.js build output
+/.next
+
+# dotenv environment variables file
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.log
+
+# Directories used by tools like jest, parcel, storybook, and netlify
+/coverage
+/.cache
+/.parcel-cache
+.storybook-out
+/public/hmr
+/public/out
+/dist
