@@ -12,29 +12,24 @@ export function Introduction() {
     >
       <Container className="text-lg tracking-tight text-slate-700">
         <p className="font-display text-4xl font-bold tracking-tight text-slate-900">
-          “Everything Starts as a Square” is a book and video course that
-          teaches you a simple method to designing icons that anyone can learn.
+          Myofascial Meridians
         </p>
         <p className="mt-4">
-          Before I learned how to design icons myself, I always imagined that
-          they were drawn by hand using the pen tool, some sort of fancy
-          graphics tablet, and hours and hours spent manually fine-tuning bezier
-          curves.
+        The 'fibrous net' in the human body is one of 3 full body systems. Alongside the cardio-vascular, & nervous system, this connective layer includes all the tissues investing and attaching the collagen in bones, cartilage, tendons, ligaments, & superficial layer just below the skin. Conditioning into this system promotes better connectivity for improved movement and even immunity to illness.
         </p>
         <p className="mt-4">
-          But it turns out this isn’t how great icon designers work at all.
-        </p>
-        <p className="mt-4">
-          In “Everything Starts as a Square”, you’ll learn the systems experts
-          use to create pixel perfect icons, without relying on a steady hand.
+        Mobility Blueprint is a Yoga inspired practice that takes you through 8 sections for a full body workout within one hour.
         </p>
         <ul role="list" className="mt-8 space-y-3">
           {[
-            'Using boolean operations to combine basic shapes into complex icons',
-            'How to adapt icons to different sizes',
-            'Translating icons from an outline style to a solid style',
-            'Identifying the characteristics that make an icon set cohesive',
-            'Figma features and keyboard shortcuts to speed up your workflow',
+            'Fascial Conditioning',
+            'Joint Mobility',
+            'Lower Body Strength',
+            'Upper Body Strength',
+            'Cardio Peak',
+            'Fascial Sequencing Through Vinyasa',
+            'Core Focus',
+            'Fascial Recovery '
           ].map((feature) => (
             <li key={feature} className="flex">
               <CheckIcon className="h-8 w-8 flex-none fill-blue-500" />
@@ -43,11 +38,10 @@ export function Introduction() {
           ))}
         </ul>
         <p className="mt-8">
-          By the end of the book, you’ll have all the confidence you need to dig
-          in and start creating beautiful icons that can hold their own against
-          any of the sets you can find online.
+        This unique workout program is designed to give you the strength and flexibility to be free from joint and fascial pain allowing you to be more dynamic in any activity you choose to take part in. By sequencing our Myofascial Meridians we can define geography and geometry within the body's mobile tensegrity.
         </p>
-        <p className="mt-10">
+        {/* OPTIONAL LINK */}
+        {/* <p className="mt-10">
           <Link
             href="#free-chapters"
             className="text-base font-medium text-blue-600 hover:text-blue-800"
@@ -55,7 +49,7 @@ export function Introduction() {
             Get two free chapters straight to your inbox{' '}
             <span aria-hidden="true">&rarr;</span>
           </Link>
-        </p>
+        </p> */}
       </Container>
     </section>
   )

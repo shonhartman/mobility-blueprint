@@ -6,7 +6,7 @@ import { Introduction } from '@/components/Introduction'
 import { NavBar } from '@/components/NavBar'
 import { Pricing } from '@/components/Pricing'
 import { Resources } from '@/components/Resources'
-import { Screencasts } from '@/components/Screencasts'
+import { InnerLines } from '@/components/InnerLines'
 import { TableOfContents } from '@/components/TableOfContents'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
@@ -33,7 +33,7 @@ export default function Home() {
           can create any icon I need in no time. Great resource!”
         </p>
       </Testimonial>
-      <Screencasts />
+      <InnerLines />
       <Testimonial
         id="testimonial-from-gerardo-stark"
         author={{

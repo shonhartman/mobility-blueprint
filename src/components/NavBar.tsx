@@ -7,15 +7,15 @@ import clsx from 'clsx'
 
 const sections = [
   {
-    id: 'table-of-contents',
+    id: 'lateral-lines',
     title: (
       <>
-        <span className="hidden lg:inline">Table of contents</span>
+        <span className="hidden lg:inline">Lateral Lines</span>
         <span className="lg:hidden">Contents</span>
       </>
     ),
   },
-  { id: 'screencasts', title: 'Screencasts' },
+  { id: 'inner-lines', title: 'Inner Lines' },
   { id: 'resources', title: 'Resources' },
   { id: 'pricing', title: 'Pricing' },
   { id: 'author', title: 'Author' },

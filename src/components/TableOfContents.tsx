@@ -35,23 +35,27 @@ const tableOfContents = {
 export function TableOfContents() {
   return (
     <section
-      id="table-of-contents"
-      aria-labelledby="table-of-contents-title"
+      id="lateral-lines"
+      aria-labelledby="lateral-lines-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>
-        <SectionHeading number="1" id="table-of-contents-title">
-          Table of contents
+        <SectionHeading number="1" id="lateral-lines-title">
+          Root
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Get a look at all of the content covered in the book. Everything you
-          need to know is inside.
+          Lateral Lines
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          “Everything Starts as a Square” is comprised of 240 tightly edited,
-          highly visual pages designed to teach you everything you need to know
-          about icon design with no unnecessary filler.
+        In the context of the lateral line myofascial meridian, the term "meridian" refers to a continuous pathway of connective tissue, or fascia, that links together various muscles, tendons, and other structures in the body. The "lateral line" specifically refers to a pathway that runs along the side of the body.
         </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        The lateral line myofascial meridian encompasses a series of interconnected muscles and fascial connections that contribute to various aspects of movement and stability. It extends from the side of the head, down the neck and trunk, along the outer hip and thigh, and even down to the outer side of the leg and foot. This pathway is believed to play a role in lateral flexion (sideways bending), rotation, and stabilization of the body.
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        By understanding and working with the lateral line myofascial meridian, practitioners can address patterns of tension, restriction, and dysfunction that may be affecting movement and posture. Techniques such as myofascial release, stretching, and movement exercises can be used to influence the fascial connections along this meridian and potentially alleviate discomfort or improve overall movement patterns.
+        </p>
+
         <Expandable>
           <ol role="list" className="mt-16 space-y-10 sm:space-y-16">
             <ExpandableItems>
