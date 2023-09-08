@@ -66,16 +66,21 @@ export function InnerLines() {
           Inner Lines
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Over an hour of high quality, step-by-step video content to sharpen
-          your icon design workflow.
+          The deep front line
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Learn how to design your very first icons in a series of inner-lines
-          that will teach you everything you need to know to go from beginner to
-          pro in just over an hour.
+        The deep front line myofascial meridian is a continuous pathway of connective tissue, 
+        or fascia, that travels deep within the body, linking together various muscles, tendons, 
+        and structures. It extends from the inside of the feet, up the inner legs, through the pelvis, 
+        along the front of the spine, and ends at the base of the skull with the tongue. 
+        This pathway is involved in postural support, coordination, and overall body alignment. 
+        It plays a significant role in maintaining an upright posture, efficient walking, and stability. 
+        By understanding and working with the deep front line, practitioners can address issues 
+        related to posture, core stability, and overall body alignment.
         </p>
       </Container>
-      <Container size="lg" className="mt-16">
+      {/* POSSIBLE LISTING COMPONENT */}
+      {/* <Container size="lg" className="mt-16">
         <ol
           role="list"
           className="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:video] sm:grid-cols-2 lg:grid-cols-4"
@@ -111,7 +116,7 @@ export function InnerLines() {
             </li>
           ))}
         </ol>
-      </Container>
+      </Container> */}
     </section>
   )
 }

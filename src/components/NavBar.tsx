@@ -16,7 +16,7 @@ const sections = [
     ),
   },
   { id: 'inner-lines', title: 'Inner Lines' },
-  { id: 'resources', title: 'Resources' },
+  { id: 'resources', title: 'FrontLine' },
   { id: 'pricing', title: 'Pricing' },
   { id: 'author', title: 'Author' },
 ]

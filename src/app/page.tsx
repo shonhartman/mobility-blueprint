@@ -5,9 +5,9 @@ import { Hero } from '@/components/Hero'
 import { Introduction } from '@/components/Introduction'
 import { NavBar } from '@/components/NavBar'
 import { Pricing } from '@/components/Pricing'
-import { Resources } from '@/components/Resources'
+import { FrontLine } from '@/components/FrontLine'
 import { InnerLines } from '@/components/InnerLines'
-import { TableOfContents } from '@/components/TableOfContents'
+import { LateralLines } from '@/components/LateralLines'
 import { Testimonial } from '@/components/Testimonial'
 import { Testimonials } from '@/components/Testimonials'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
@@ -19,8 +19,8 @@ export default function Home() {
       <Hero />
       <Introduction />
       <NavBar />
-      <TableOfContents />
-      <Testimonial
+      <LateralLines />
+      {/* <Testimonial
         id="testimonial-from-tommy-stroman"
         author={{
           name: 'Tommy Stroman',
@@ -32,9 +32,9 @@ export default function Home() {
           “I didn’t know a thing about icon design until I read this book. Now I
           can create any icon I need in no time. Great resource!”
         </p>
-      </Testimonial>
+      </Testimonial> */}
       <InnerLines />
-      <Testimonial
+      {/* <Testimonial
         id="testimonial-from-gerardo-stark"
         author={{
           name: 'Gerardo Stark',
@@ -46,9 +46,9 @@ export default function Home() {
           “I’ve tried to create my own icons in the past but quickly got
           frustrated and gave up. Now I sell my own custom icon sets online.”
         </p>
-      </Testimonial>
-      <Resources />
-      <FreeChapters />
+      </Testimonial> */}
+      <FrontLine />
+      {/* <FreeChapters /> */}
       <Pricing />
       <Testimonials />
       <Author />

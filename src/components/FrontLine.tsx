@@ -57,7 +57,7 @@ const resources = [
   },
 ]
 
-export function Resources() {
+export function FrontLine() {
   return (
     <section
       id="resources"
@@ -66,19 +66,20 @@ export function Resources() {
     >
       <Container>
         <SectionHeading number="3" id="resources-title">
-          Resources
+          Solar
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Tools and resources you can use to get started even faster and
-          progress even further.
+        Superficial front line
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          Design assets, icon teardowns, and a community of fellow icon
-          designers where you can ask questions, get feedback, and accelerate
-          your learning.
+        The superficial front line myofascial meridian is a continuous pathway of connective tissue, or fascia, that encompasses the connections between the the dorsum of the foot, tibialis anterior, quadriceps, rectus abdominis, solar plexus, the throat, and the face ending at the top of the forehead
+        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        It extends from the top of the toes, along the front of the body, up through the belly and chest, and ends at the forehead. This pathway is involved in posture, core stability, and forward movement, allowing us to flex and extend our body. By understanding and addressing the superficial front line, practitioners can work with issues related to forward movement, breathing, and postural imbalances.
         </p>
       </Container>
-      <Container size="lg" className="mt-16">
+      {/* POSSIBLE COMPONENT: This could be a nice look for a listing component */}
+      {/* <Container size="lg" className="mt-16">
         <ol
           role="list"
           className="-mx-3 grid grid-cols-1 gap-y-10 lg:grid-cols-3 lg:text-center xl:-mx-12 xl:divide-x xl:divide-slate-400/20"
@@ -102,7 +103,7 @@ export function Resources() {
             </li>
           ))}
         </ol>
-      </Container>
+      </Container> */}
     </section>
   )
 }
