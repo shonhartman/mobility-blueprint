@@ -104,54 +104,25 @@ function Plan({
   )
 }
 
-export function Pricing() {
+export function SpiralLine() {
   return (
     <section
-      id="pricing"
-      aria-labelledby="pricing-title"
+      id="spiral-line"
+      aria-labelledby="spiral-line-title"
       className="scroll-mt-14 pb-8 pt-16 sm:scroll-mt-32 sm:pb-10 sm:pt-20 lg:pb-16 lg:pt-32"
     >
       <Container>
-        <SectionHeading number="4" id="pricing-title">
-          Pricing
+        <SectionHeading number="4" id="spiral-line-title">
+          Spiral Line
         </SectionHeading>
-        <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-          Pick your package
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        Spiral line
         </p>
-        <p className="mt-4 max-w-xl text-lg tracking-tight text-slate-600">
-          “Everything Starts as a Square” is available in two different packages
-          so you can pick the one that’s right for you.
-        </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        The Spiral Line (SL) is a complex myofascial meridian that winds its way around the body in a helical pattern. This line connects various muscles and fascia across the body, contributing to rotational movements and stability.         </p>
+        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        The Spiral Line functions in coordinating complex movements and maintaining balance. It plays a crucial role in distributing mechanical stress throughout the body during movement, especially in actions that involve twisting or rotational forces. The SL highlights how fascial and muscular structures are not just linear or segmented but are instead intricately interconnected, contributing to the body's dynamic stability and movement efficiency.</p>
       </Container>
-      <div className="mx-auto mt-16 max-w-5xl lg:px-6">
-        <div className="grid bg-slate-50 sm:px-6 sm:pb-16 md:grid-cols-2 md:rounded-6xl md:px-8 md:pt-16 lg:p-20">
-          <Plan
-            name="Essential"
-            description="The perfect starting point if you’re on a budget."
-            price="15"
-            href="#"
-            features={[
-              'The 240-page ebook',
-              'Figma icon templates',
-              'Community access',
-            ]}
-          />
-          <Plan
-            featured
-            name="Complete"
-            description="Everything icon resource you could ever ask for."
-            price="229"
-            href="#"
-            features={[
-              'The 240-page ebook',
-              'Figma icon templates',
-              'Over an hour of inner-lines',
-              'Weekly icon teardowns',
-              'Community access',
-            ]}
-          />
-        </div>
-      </div>
     </section>
   )
 }

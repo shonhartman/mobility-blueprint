@@ -19,7 +19,7 @@ function Testimonial() {
         <strong className="font-semibold text-blue-600 before:content-['—_']">
           Tanya
         </strong>
-        , Teacher
+        , School Teacher
       </figcaption>
     </figure>
   )
@@ -50,7 +50,7 @@ export function Hero() {
               <Button href="#free-chapters" color="blue">
                 Practice online
               </Button>
-              <Button href="#pricing" variant="outline" color="blue">
+              <Button href="#backline" variant="outline" color="blue">
                 Practice in person
               </Button>
             </div>

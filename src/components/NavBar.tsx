@@ -16,9 +16,10 @@ const sections = [
     ),
   },
   { id: 'inner-lines', title: 'Inner Lines' },
-  { id: 'resources', title: 'FrontLine' },
-  { id: 'pricing', title: 'Pricing' },
-  { id: 'author', title: 'Author' },
+  { id: 'resources', title: 'Front Line' },
+  { id: 'back-line', title: 'Back Line' },
+  { id: 'spiral-line', title: 'Spiral Line' },
+  // { id: 'author', title: 'Author' },
 ]
 
 function MenuIcon({
