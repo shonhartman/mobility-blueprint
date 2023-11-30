@@ -50,7 +50,7 @@ export function Hero() {
               <Button href="#free-chapters" color="blue">
                 Practice online
               </Button>
-              <Button href="#backline" variant="outline" color="blue">
+              <Button href="#back-line" variant="outline" color="blue">
                 Practice in person
               </Button>
             </div>

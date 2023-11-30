@@ -60,8 +60,8 @@ const resources = [
 export function FrontLine() {
   return (
     <section
-      id="resources"
-      aria-labelledby="resources-title"
+      id="front-line"
+      aria-labelledby="front-line-title"
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <Container>

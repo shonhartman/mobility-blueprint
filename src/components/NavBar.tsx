@@ -16,10 +16,9 @@ const sections = [
     ),
   },
   { id: 'inner-lines', title: 'Inner Lines' },
-  { id: 'resources', title: 'Front Line' },
+  { id: 'front-line', title: 'Front Line' },
   { id: 'back-line', title: 'Back Line' },
   { id: 'spiral-line', title: 'Spiral Line' },
-  // { id: 'author', title: 'Author' },
 ]
 
 function MenuIcon({
@@ -168,7 +167,6 @@ export function NavBar() {
             <li key={section.id} className="flex [counter-increment:section]">
               <Link
                 href={`#${section.id}`}
-                scroll={false}
                 className={clsx(
                   'flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:text-sm before:content-[counter(section,decimal-leading-zero)]',
                   sectionIndex === activeIndex
