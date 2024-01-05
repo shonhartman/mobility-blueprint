@@ -5,6 +5,7 @@ import {
   ExpandableItems,
 } from '@/components/Expandable'
 import { SectionHeading } from '@/components/SectionHeading'
+import { Button } from './Button'
 
 // Seed data
 const tableOfContents = {
@@ -56,6 +57,9 @@ export function LateralLines() {
         <p className="mt-4 text-lg tracking-tight text-slate-700">
         By understanding and working with the lateral line myofascial meridian, practitioners can address patterns of tension, restriction, and dysfunction that may be affecting movement and posture.
         </p>
+        <Button href="/practice/lateral-lines" color="blue">
+          Practice
+        </Button>
 
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
           TODO : Videos
