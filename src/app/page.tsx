@@ -35,26 +35,10 @@ export default function Home() {
         </p>
       </Testimonial> */}
       <InnerLines />
-      {/* <Testimonial
-        id="testimonial-from-gerardo-stark"
-        author={{
-          name: 'Gerardo Stark',
-          role: 'Creator of Pandemicons',
-          image: avatarImage2,
-        }}
-      >
-        <p>
-          “I’ve tried to create my own icons in the past but quickly got
-          frustrated and gave up. Now I sell my own custom icon sets online.”
-        </p>
-      </Testimonial> */}
       <FrontLine />
       {/* <FreeChapters /> */}
       <BackLine />
       <SpiralLine/>
-      {/* NICE CARD WIDGET */}
-      <Testimonials />
-      {/* ABOUT ME SECTION */}
       <Author />
       <Footer />
     </>

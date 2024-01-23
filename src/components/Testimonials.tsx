@@ -10,7 +10,7 @@ import {
 
 type TestimonialType = {
   content: string;
-  author: {
+  exercise: {
     name: string;
     role: string;
     image: ImageProps['src'];
@@ -18,14 +18,14 @@ type TestimonialType = {
 };
 
 type TestimonialsProps = {
-  testimonials: TestimonialType[][];
+  exercises: TestimonialType[][];
 };
 
 function Testimonial({
-  author,
+  exercise,
   children,
 }: {
-  author: { name: string; role: string; image: ImageProps['src'] }
+  exercise: { name: string; role: string; image: ImageProps['src'] }
   children: React.ReactNode
 }) {
   return (
@@ -33,10 +33,10 @@ function Testimonial({
     <div className="bg-slate-50 flex-grow rounded-4xl overflow-hidden">
       <Image
         className="h-full w-full object-cover"
-        src={author.image}
+        src={exercise.image}
         alt=""
-        width={48}
-        height={48}
+        width={350}
+        height={350}
       />
     </div>
     </figure>
@@ -44,7 +44,7 @@ function Testimonial({
 }
 
 
-export function Testimonials({ testimonials }: TestimonialsProps) {
+export function Testimonials({ exercises }: TestimonialsProps) {
   return (
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="text-center">
@@ -60,33 +60,33 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
           role="list"
           className="mx-auto grid max-w-2xl grid-cols-1 gap-8 px-4 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
         >
-          {testimonials
+          {exercises
             .map((column) => column[0])
-            .map((testimonial, testimonialIndex) => (
-              <li key={testimonialIndex} className="lg:hidden">
-                <Testimonial author={testimonial.author}>
-                  {testimonial.content}
+            .map((exercise, exerciseIndex: number) => (
+              <li key={exerciseIndex} className="lg:hidden">
+                <Testimonial exercise={exercise.exercise}>
+                  {exercise.content}
                 </Testimonial>
               </li>
             ))}
-          {testimonials.map((column, columnIndex) => (
+          {exercises.map((column, columnIndex) => (
             <li
               key={columnIndex}
               className="hidden group-data-[expanded]:list-item lg:list-item"
             >
               <ul role="list">
                 <ExpandableItems>
-                  {column.map((testimonial, testimonialIndex) => (
+                  {column.map((exercise, exerciseIndex) => (
                     <li
-                      key={testimonialIndex}
+                      key={exerciseIndex}
                       className={clsx(
-                        testimonialIndex === 0 && 'hidden lg:list-item',
-                        testimonialIndex === 1 && 'lg:mt-8',
-                        testimonialIndex > 1 && 'mt-8',
+                        exerciseIndex === 0 && 'hidden lg:list-item',
+                        exerciseIndex === 1 && 'lg:mt-8',
+                        exerciseIndex > 1 && 'mt-8',
                       )}
                     >
-                      <Testimonial author={testimonial.author}>
-                        {testimonial.content}
+                      <Testimonial exercise={exercise.exercise}>
+                        {exercise.content}
                       </Testimonial>
                     </li>
                   ))}
