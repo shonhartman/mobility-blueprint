@@ -1,14 +1,13 @@
 import { Testimonials } from "@/components/Testimonials";
 
-import avatarImage3 from '@/images/lateral-lines/lateral_lines_1.jpg'
-import avatarImage4 from '@/images/avatars/avatar-4.png'
-import avatarImage5 from '@/images/avatars/avatar-5.png'
-import avatarImage6 from '@/images/avatars/avatar-6.png'
-import avatarImage7 from '@/images/avatars/avatar-7.png'
-import avatarImage8 from '@/images/avatars/avatar-8.png'
-import avatarImage9 from '@/images/avatars/avatar-9.png'
-import avatarImage10 from '@/images/avatars/avatar-10.png'
-import avatarImage11 from '@/images/avatars/avatar-11.png'
+import lateralLines1 from '@/images/lateral-lines/lateral_lines_1.jpg'
+import lateralLines2 from '@/images/lateral-lines/lateral_lines_2.jpg'
+import lateralLines3 from '@/images/lateral-lines/lateral_lines_3.jpg'
+import lateralLines4 from '@/images/lateral-lines/lateral_lines_4.jpg'
+import lateralLines5 from '@/images/lateral-lines/lateral_lines_5.jpg'
+import lateralLines6 from '@/images/lateral-lines/lateral_lines_6.jpg'
+import lateralLines7 from '@/images/lateral-lines/lateral_lines_7.jpg'
+import lateralLines8 from '@/images/lateral-lines/lateral_lines_8.jpg'
 
 const exercises = [
   [
@@ -18,7 +17,7 @@ const exercises = [
       exercise: {
         name: 'Antonio Littel',
         role: 'Frontend Developer',
-        image: avatarImage3,
+        image: lateralLines1,
       },
     },
     {
@@ -27,7 +26,7 @@ const exercises = [
       exercise: {
         name: 'Lynn Nolan',
         role: 'Growth Marketer',
-        image: avatarImage4,
+        image: lateralLines2,
       },
     },
     {
@@ -36,7 +35,7 @@ const exercises = [
       exercise: {
         name: 'Krista Prosacco',
         role: 'Professional Designer',
-        image: avatarImage9,
+        image: lateralLines3,
       },
     },
   ],
@@ -47,7 +46,7 @@ const exercises = [
       exercise: {
         name: 'Cameron Considine',
         role: 'Entrepreneur',
-        image: avatarImage7,
+        image: lateralLines4,
       },
     },
     {
@@ -56,7 +55,7 @@ const exercises = [
       exercise: {
         name: 'Regina Wisoky',
         role: 'Design Student',
-        image: avatarImage11,
+        image: lateralLines5,
       },
     },
     {
@@ -65,7 +64,7 @@ const exercises = [
       exercise: {
         name: 'Vernon Cummerata',
         role: 'UI Engineer',
-        image: avatarImage8,
+        image: lateralLines6,
       },
     },
   ],
@@ -76,7 +75,7 @@ const exercises = [
       exercise: {
         name: 'Steven Hackett',
         role: 'Bootcamp Instructor',
-        image: avatarImage5,
+        image: lateralLines7,
       },
     },
     {
@@ -85,16 +84,7 @@ const exercises = [
       exercise: {
         name: 'Carla Schoen',
         role: 'Startup Founder',
-        image: avatarImage10,
-      },
-    },
-    {
-      content:
-        'All I can say is wow — this is easily the best icon design resource I’ve ever encountered.',
-      exercise: {
-        name: 'Leah Kiehn',
-        role: 'Creative Director',
-        image: avatarImage6,
+        image: lateralLines8,
       },
     },
   ],
