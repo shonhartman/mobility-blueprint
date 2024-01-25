@@ -8,8 +8,8 @@ import { BackLine } from '@/components/BackLine'
 import { FrontLine } from '@/components/FrontLine'
 import { InnerLines } from '@/components/InnerLines'
 import { LateralLines } from '@/components/LateralLines'
-import { Testimonial } from '@/components/Testimonial'
-import { Testimonials } from '@/components/Testimonials'
+import { Exercise } from '@/components/Exercise'
+import { Exercises } from '@/components/Exercises'
 import avatarImage1 from '@/images/avatars/avatar-1.png'
 import avatarImage2 from '@/images/avatars/avatar-2.png'
 import { SpiralLine } from '@/components/SpiralLine'
@@ -21,8 +21,8 @@ export default function Home() {
       <Introduction />
       <NavBar />
       <LateralLines />
-      {/* <Testimonial
-        id="testimonial-from-tommy-stroman"
+      {/* <Exercise
+        id="Exercise-from-tommy-stroman"
         author={{
           name: 'Tommy Stroman',
           role: 'Front-end developer',
@@ -33,7 +33,7 @@ export default function Home() {
           “I didn’t know a thing about icon design until I read this book. Now I
           can create any icon I need in no time. Great resource!”
         </p>
-      </Testimonial> */}
+      </Exercise> */}
       <InnerLines />
       <FrontLine />
       {/* <FreeChapters /> */}

@@ -4,7 +4,7 @@ import { Container } from '@/components/Container'
 import { GridPattern } from '@/components/GridPattern'
 import { StarRating } from '@/components/StarRating'
 
-export function Testimonial({
+export function Exercise({
   id,
   author,
   children,
@@ -16,7 +16,7 @@ export function Testimonial({
   return (
     <aside
       id={id}
-      aria-label={`Testimonial from ${author.name}`}
+      aria-label={`Exercise from ${author.name}`}
       className="relative bg-slate-100 py-16 sm:py-32"
     >
       <div className="text-slate-900/10">

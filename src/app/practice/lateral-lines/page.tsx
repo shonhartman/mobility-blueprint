@@ -1,4 +1,4 @@
-import { Testimonials } from "@/components/Testimonials";
+import { Exercises } from "@/components/Exercises";
 
 import lateralLines1 from '@/images/lateral-lines/lateral_lines_1.jpg'
 import lateralLines2 from '@/images/lateral-lines/lateral_lines_2.jpg'
@@ -92,6 +92,6 @@ const exercises = [
 
 export default function LateralLinesPage() {
   return (
-    <Testimonials exercises={exercises} />
+    <Exercises exercises={exercises} />
   )
 }
