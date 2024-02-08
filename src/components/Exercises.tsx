@@ -52,7 +52,7 @@ export function Exercises({ exercises }: ExercisesProps) {
       <ul
         role="list"
         className="mx-auto grid max-w-2xl grid-cols-1 gap-8 px-4 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
-        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gridAutoRows: 'auto' }}
+        style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gridAutoRows: 'auto' }}
       >
         {exercises.flat().map((exercise, exerciseIndex) => (
           <li key={exerciseIndex}>
