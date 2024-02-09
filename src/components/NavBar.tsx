@@ -6,15 +6,7 @@ import { Popover } from '@headlessui/react'
 import clsx from 'clsx'
 
 const sections = [
-  {
-    id: 'lateral-lines',
-    title: (
-      <>
-        <span className="hidden lg:inline">Lateral Lines</span>
-        <span className="lg:hidden">Contents</span>
-      </>
-    ),
-  },
+  { id: 'lateral-lines', title: 'Lateral Lines'},
   { id: 'inner-lines', title: 'Inner Lines' },
   { id: 'front-line', title: 'Front Line' },
   { id: 'back-line', title: 'Back Line' },

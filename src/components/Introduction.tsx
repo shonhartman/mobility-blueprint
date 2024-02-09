@@ -38,7 +38,11 @@ export function Introduction() {
           ))}
         </ul>
         <p className="mt-8">
-        This unique workout program is designed to give you the strength and flexibility to be free from joint and fascial pain allowing you to be more dynamic in any activity you choose to take part in. By sequencing our Myofascial Meridians we can define geography and geometry within the body's mobile tensegrity.
+          This unique workout program is designed to give you the strength and flexibility 
+          to be free from joint and fascial pain allowing you to be more dynamic in any activity 
+          you choose to take part in. By sequencing our Myofascial Meridians we can define geography 
+          and geometry within the body's mobile tensegrity. These patterns of movement can be 
+          broken down into five directions.
         </p>
         {/* OPTIONAL LINK */}
         {/* <p className="mt-10">

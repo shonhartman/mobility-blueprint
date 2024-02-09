@@ -5,7 +5,7 @@ export function SectionHeading({
   children,
   className,
   ...props
-}: React.ComponentPropsWithoutRef<'h2'> & { number: string }) {
+}: React.ComponentPropsWithoutRef<'h2'> & { number?: string }) {
   return (
     <h2
       className={clsx(
@@ -15,10 +15,12 @@ export function SectionHeading({
       {...props}
     >
       <span className="font-mono text-sm" aria-hidden="true">
-        {number.padStart(2, '0')}
+        {number?.padStart(2, '0')}
       </span>
-      <span className="ml-3 h-3.5 w-px bg-blue-600/20" />
-      <span className="ml-3 text-base font-medium tracking-tight">
+      {number && (
+        <span className="ml-3 h-3.5 w-px bg-blue-600/20" />
+      )}
+      <span className={clsx('text-base font-medium tracking-tight', { 'ml-3': number })}>
         {children}
       </span>
     </h2>
