@@ -38,17 +38,14 @@ export function Author() {
               Author
             </SectionHeading>
             <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-              <span className="block text-blue-600">Mira Lindehoff –</span> Hey
-              there, I’m the author behind ‘Everything Starts as a Square’.
+              <span className="block text-blue-600">Shaun Hartman –</span> Creator of ‘Mobility Blueprint’.
             </p>
             <p className="mt-4 text-lg tracking-tight text-slate-700">
-              I’ve been designing icons professionally for over a decade and
-              have worked with dozens of the biggest brands to create custom
-              sets for their products. I’m an accomplished conference speaker,
-              and have been teaching icon design workshops every month for the
-              last three years. I’ve worked with designers of all skill levels
-              and honed my way of teaching to really click for anyone who has
-              the itch to start designing their own icons.
+              I’ve been designing this practice for 7 years. I have been incorporating it
+              into an extremely busy schedule with a demanding 40 hour per week job and 
+              3 kids that need my utmost attention while also finding time for personal expression
+              through art and music. These exercises can work their way into your schedule helping 
+              you move and feel better while giving your body tools and pathways to fight illness. 
             </p>
             <p className="mt-8">
               <Link
