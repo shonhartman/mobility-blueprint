@@ -1,6 +1,8 @@
+'use client';
 import Image, { type ImageProps } from 'next/image'
 
 import { Container } from '@/components/Container'
+import { useState } from 'react';
 
 type ExerciseType = {
   content: string;
@@ -37,7 +39,18 @@ function Exercise({
   )
 }
 
+// TODO: This doesn't work yet. Nice draft though. Reshape data & process here
 export function Exercises({ exercises }: ExercisesProps) {
+  const [finishedExercises, setFinishedExercises] = useState<number[]>([])
+  
+  const handleExerciseClick = (index: number) => {
+    console.log({finishedExercises});
+    
+    if(!finishedExercises.includes(index)) {
+      setFinishedExercises([...finishedExercises, index]);
+    }
+  }
+  
   return (
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="mb-8 text-center">
@@ -55,7 +68,7 @@ export function Exercises({ exercises }: ExercisesProps) {
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gridAutoRows: 'auto' }}
       >
         {exercises.flat().map((exercise, exerciseIndex) => (
-          <li key={exerciseIndex}>
+          <li key={exerciseIndex} onClick={() => handleExerciseClick(exerciseIndex)}>
             <Exercise exercise={exercise.exercise}>
               {exercise.content}
             </Exercise>

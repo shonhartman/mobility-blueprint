@@ -9,6 +9,7 @@ import lateralLines6 from '@/images/lateral-lines/lateral_lines_6.jpg'
 import lateralLines7 from '@/images/lateral-lines/lateral_lines_7.jpg'
 import lateralLines8 from '@/images/lateral-lines/lateral_lines_8.jpg'
 
+// TODO: Reshape this data for efficiency
 const exercises = [
   [
     {
