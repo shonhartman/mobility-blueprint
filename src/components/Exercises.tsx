@@ -5,23 +5,20 @@ import { Container } from '@/components/Container'
 import { useState } from 'react';
 
 type ExerciseType = {
-  content: string;
-  exercise: {
-    name: string;
-    role: string;
-    image: ImageProps['src'];
-  };
+  name: string;
+  id: number,
+  image: ImageProps['src'];
 };
 
 type ExercisesProps = {
-  exercises: ExerciseType[][];
+  exercises: ExerciseType[];
 };
 
 function Exercise({
   exercise,
   children,
 }: {
-  exercise: { name: string; role: string; image: ImageProps['src'] }
+  exercise: { name: string; image: ImageProps['src'] }
   children: React.ReactNode
 }) {
   return (
@@ -39,7 +36,6 @@ function Exercise({
   )
 }
 
-// TODO: This doesn't work yet. Nice draft though. Reshape data & process here
 export function Exercises({ exercises }: ExercisesProps) {
   const [finishedExercises, setFinishedExercises] = useState<number[]>([])
   
@@ -67,10 +63,10 @@ export function Exercises({ exercises }: ExercisesProps) {
         className="mx-auto grid max-w-2xl grid-cols-1 gap-8 px-4 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gridAutoRows: 'auto' }}
       >
-        {exercises.flat().map((exercise, exerciseIndex) => (
-          <li key={exerciseIndex} onClick={() => handleExerciseClick(exerciseIndex)}>
-            <Exercise exercise={exercise.exercise}>
-              {exercise.content}
+        {exercises.flat().map((exercise) => (
+          <li key={exercise.name} onClick={() => handleExerciseClick(exercise.id)}>
+            <Exercise exercise={exercise}>
+              {exercise.name}
             </Exercise>
           </li>
         ))}
