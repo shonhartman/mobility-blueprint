@@ -11,7 +11,11 @@ type ExerciseType = {
 };
 
 type ExercisesProps = {
-  exercises: ExerciseType[];
+  data: {
+    title: string;
+    description: string;
+    exercises: ExerciseType[];
+  }
 };
 
 function Exercise({
@@ -36,7 +40,7 @@ function Exercise({
   )
 }
 
-export function Exercises({ exercises }: ExercisesProps) {
+export function Exercises({ data }: ExercisesProps) {
   const [finishedExercises, setFinishedExercises] = useState<number[]>([])
   
   const handleExerciseClick = (index: number) => {
@@ -51,11 +55,10 @@ export function Exercises({ exercises }: ExercisesProps) {
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="mb-8 text-center">
         <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
-          Lateral Line Conditioning
+          {data.title}
         </h2>
         <p className="mt-4 text-lg tracking-tight text-slate-600">
-          By targeting the lateral line fascia, 
-          these exercises promote flexibility, strength, and overall health. 
+          {data.description}
         </p>
       </Container>
       <ul
@@ -63,7 +66,7 @@ export function Exercises({ exercises }: ExercisesProps) {
         className="mx-auto grid max-w-2xl grid-cols-1 gap-8 px-4 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gridAutoRows: 'auto' }}
       >
-        {exercises.flat().map((exercise) => (
+        {data.exercises.flat().map((exercise) => (
           <li key={exercise.name} onClick={() => handleExerciseClick(exercise.id)}>
             <Exercise exercise={exercise}>
               {exercise.name}
