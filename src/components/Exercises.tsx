@@ -42,12 +42,16 @@ function Exercise({
 
 export function Exercises({ data }: ExercisesProps) {
   const [finishedExercises, setFinishedExercises] = useState<number[]>([])
-  
-  const handleExerciseClick = (index: number) => {
-    console.log({finishedExercises});
-    
-    if(!finishedExercises.includes(index)) {
-      setFinishedExercises([...finishedExercises, index]);
+
+  const handleExerciseClick = (exerciseId: number) => {
+    let newfinishedExercises = [...finishedExercises];
+    const currentDate = new Date();    
+
+    if (!finishedExercises.includes(exerciseId)) {      
+      newfinishedExercises.push(exerciseId);
+      setFinishedExercises(newfinishedExercises);
+      // Store in localStorage until db solution is viable
+      localStorage.setItem('finishedExercises', JSON.stringify(newfinishedExercises.map(exerciseId => ({exerciseId, currentDate}))));
     }
   }
   
