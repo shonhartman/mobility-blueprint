@@ -2,7 +2,7 @@
 import Image, { type ImageProps } from 'next/image'
 
 import { Container } from '@/components/Container'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type ExerciseType = {
   name: string;
@@ -41,20 +41,50 @@ function Exercise({
 }
 
 export function Exercises({ data }: ExercisesProps) {
-  const [finishedExercises, setFinishedExercises] = useState<number[]>([])
+  const [finishedExercises, setFinishedExercises] = useState<{ exerciseId: number, date: string }[]>([]);
+
+  useEffect(() => {
+    const storedExercises = localStorage.getItem('finishedExercises');
+    if (storedExercises) {
+      const parsedExercises = JSON.parse(storedExercises);
+      const tenSecondsAgo = new Date();
+      tenSecondsAgo.setSeconds(tenSecondsAgo.getSeconds() - 10);
+
+      const validExercises = parsedExercises.filter((exercise: { date: string }) => {
+        const finishDate = new Date(exercise.date);
+        return finishDate >= tenSecondsAgo;
+      });
+
+      setFinishedExercises(validExercises);
+      localStorage.setItem('finishedExercises', JSON.stringify(validExercises));
+    }
+  }, []);
 
   const handleExerciseClick = (exerciseId: number) => {
-    let newfinishedExercises = [...finishedExercises];
-    const currentDate = new Date();    
+    const currentDate = new Date().toISOString();
+    const newFinishedExercises = [...finishedExercises, { exerciseId, date: currentDate }];
+    setFinishedExercises(newFinishedExercises);
+    localStorage.setItem('finishedExercises', JSON.stringify(newFinishedExercises));
+  };
 
-    if (!finishedExercises.includes(exerciseId)) {      
-      newfinishedExercises.push(exerciseId);
-      setFinishedExercises(newfinishedExercises);
-      // Store in localStorage until db solution is viable
-      localStorage.setItem('finishedExercises', JSON.stringify(newfinishedExercises.map(exerciseId => ({exerciseId, currentDate}))));
-    }
-  }
-  
+  const isExerciseFinished = (exerciseId: number) => {
+    const exercise = finishedExercises.find(ex => ex.exerciseId === exerciseId);
+    if (!exercise) return false;
+
+    const finishDate = new Date(exercise.date);
+    const oneMonthAgo = new Date();
+    oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+    // Test case
+    // const tenSecondsAgo = new Date();
+    // tenSecondsAgo.setSeconds(tenSecondsAgo.getSeconds() - 10);
+    // const isFinished = finishDate >= tenSecondsAgo;
+
+    const isFinished = finishDate >= oneMonthAgo;
+
+    return isFinished;
+  };
+
   return (
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="mb-8 text-center">
@@ -71,7 +101,11 @@ export function Exercises({ data }: ExercisesProps) {
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gridAutoRows: 'auto' }}
       >
         {data.exercises.flat().map((exercise) => (
-          <li key={exercise.name} onClick={() => handleExerciseClick(exercise.id)}>
+          <li
+            key={exercise.name}
+            onClick={() => handleExerciseClick(exercise.id)}
+            className={isExerciseFinished(exercise.id) ? 'opacity-50' : ''}
+          >
             <Exercise exercise={exercise}>
               {exercise.name}
             </Exercise>
