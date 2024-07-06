@@ -3,6 +3,7 @@ import Image, { type ImageProps } from 'next/image'
 
 import { Container } from '@/components/Container'
 import { useState, useEffect } from 'react';
+import HomeButton from './HomeButton';
 
 type ExerciseType = {
   name: string;
@@ -94,6 +95,7 @@ export function Exercises({ data }: ExercisesProps) {
         <p className="mt-4 text-lg tracking-tight text-slate-600">
           {data.description}
         </p>
+        <HomeButton />
       </Container>
       <ul
         role="list"
