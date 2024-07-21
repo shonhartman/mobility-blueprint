@@ -8,8 +8,6 @@ import frontLine5 from '@/images/front-line/front_line_5.jpg'
 import frontLine6 from '@/images/front-line/front_line_6.jpg'
 import frontLine7 from '@/images/front-line/front_line_7.jpg'
 import frontLine8 from '@/images/front-line/front_line_8.jpg'
-import frontLine9 from '@/images/front-line/front_line_9.jpg'
-import frontLine10 from '@/images/front-line/front_line_10.jpg'
 
 const exerciseData = {
   title: 'Front Line Conditioning',
@@ -54,16 +52,6 @@ const exerciseData = {
        name: 'frontLine8',
        id: 7,
        image: frontLine8,
-     },
-     {
-       name: 'frontLine9',
-       id: 8,
-       image: frontLine9,
-     },
-     {
-       name: 'frontLine10',
-       id: 9,
-       image: frontLine10,
      },
   ]
 } 
