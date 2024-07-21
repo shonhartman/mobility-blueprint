@@ -7,32 +7,32 @@ import {
 import { SectionHeading } from '@/components/SectionHeading'
 import { Button } from './Button'
 
-// Seed data
-const tableOfContents = {
-  'Getting started': {
-    'Getting started': 1,
-    'Intro to Figma': 15,
-    'Setting up your first artboard': 20,
-  },
-  Fundamentals: {
-    'Strokes and fills': 21,
-    'End points': 22,
-    'Bezier curves': 26,
-    'Designing on a grid': 31,
-    'Vector shapes': 45,
-  },
-  'Boolean operations': {
-    'Combining shapes': 50,
-    'Subtracting shapes': 57,
-    'Intersecting shapes': 66,
-    Flattening: 78,
-  },
-  'Optimizing for production': {
-    'Preparing for SVG': 82,
-    'Configuring your export settings': 88,
-    'Minifying and removing metadata': 95,
-  },
-}
+// Seed data for unused tool below
+// const tableOfContents = {
+//   'Getting started': {
+//     'Getting started': 1,
+//     'Intro to Figma': 15,
+//     'Setting up your first artboard': 20,
+//   },
+//   Fundamentals: {
+//     'Strokes and fills': 21,
+//     'End points': 22,
+//     'Bezier curves': 26,
+//     'Designing on a grid': 31,
+//     'Vector shapes': 45,
+//   },
+//   'Boolean operations': {
+//     'Combining shapes': 50,
+//     'Subtracting shapes': 57,
+//     'Intersecting shapes': 66,
+//     Flattening: 78,
+//   },
+//   'Optimizing for production': {
+//     'Preparing for SVG': 82,
+//     'Configuring your export settings': 88,
+//     'Minifying and removing metadata': 95,
+//   },
+// }
 
 export function LateralLines() {
   return (
@@ -57,16 +57,9 @@ export function LateralLines() {
         <p className="mt-4 text-lg tracking-tight text-slate-700">
         By understanding and working with the lateral line myofascial meridian, practitioners can address patterns of tension, restriction, and dysfunction that may be affecting movement and posture.
         </p>
-        <Button href="/practice/lateral-lines" color="blue">
+        <Button className='mt-8' href="/practice/lateral-lines" color="blue">
           Practice
         </Button>
-
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          TODO : Videos
-        </p>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          TODO : Checklist or link to checklist/ workout page
-        </p>
 
         {/* Template: unused tool */}
         {/* <Expandable>
