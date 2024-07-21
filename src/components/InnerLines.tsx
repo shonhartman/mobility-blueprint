@@ -2,41 +2,38 @@ import Image from 'next/image'
 
 import { Container } from '@/components/Container'
 import { SectionHeading } from '@/components/SectionHeading'
-import duotoneImage from '@/images/inner-lines/duotone.svg'
-import gridsImage from '@/images/inner-lines/grids.svg'
-import setupImage from '@/images/inner-lines/setup.svg'
-import strokesImage from '@/images/inner-lines/strokes.svg'
+import { Button } from './Button'
 
-const videos = [
-  {
-    title: 'Getting started with Figma',
-    description:
-      'Get familiar with the Figma UI, the different tools it offers, and the most important features.',
-    image: setupImage,
-    runtime: { minutes: 16, seconds: 54 },
-  },
-  {
-    title: 'Setting up your artboard',
-    description:
-      'Learn how to create a new artboard and configure your grid and rulers for designing icons.',
-    image: gridsImage,
-    runtime: { minutes: 9, seconds: 12 },
-  },
-  {
-    title: 'Designing your first icon',
-    description:
-      'Using basic shapes and boolean operations, learn how to design your own notification icon from scratch.',
-    image: strokesImage,
-    runtime: { minutes: 23, seconds: 25 },
-  },
-  {
-    title: 'Advanced design techniques',
-    description:
-      'Learn the techniques you need to know to adapt your original icon to a modern duotone style.',
-    image: duotoneImage,
-    runtime: { minutes: 28, seconds: 44 },
-  },
-]
+// const videos = [
+//   {
+//     title: 'Getting started with Figma',
+//     description:
+//       'Get familiar with the Figma UI, the different tools it offers, and the most important features.',
+//     image: setupImage,
+//     runtime: { minutes: 16, seconds: 54 },
+//   },
+//   {
+//     title: 'Setting up your artboard',
+//     description:
+//       'Learn how to create a new artboard and configure your grid and rulers for designing icons.',
+//     image: gridsImage,
+//     runtime: { minutes: 9, seconds: 12 },
+//   },
+//   {
+//     title: 'Designing your first icon',
+//     description:
+//       'Using basic shapes and boolean operations, learn how to design your own notification icon from scratch.',
+//     image: strokesImage,
+//     runtime: { minutes: 23, seconds: 25 },
+//   },
+//   {
+//     title: 'Advanced design techniques',
+//     description:
+//       'Learn the techniques you need to know to adapt your original icon to a modern duotone style.',
+//     image: duotoneImage,
+//     runtime: { minutes: 28, seconds: 44 },
+//   },
+// ]
 
 function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -78,6 +75,9 @@ export function InnerLines() {
         By understanding and working with the deep front line, practitioners can address issues 
         related to posture, core stability, and overall body alignment.
         </p>
+        <Button className='mt-8' href="/practice/inner-lines" color="blue">
+          Practice
+        </Button>
       </Container>
       {/* POSSIBLE LISTING COMPONENT */}
       {/* <Container size="lg" className="mt-16">
