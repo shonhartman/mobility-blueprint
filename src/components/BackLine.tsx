@@ -124,6 +124,9 @@ export function BackLine() {
         <p className="mt-4 text-lg tracking-tight text-slate-700">
         The Back Line is significant for its role in posture and movement. It demonstrates how seemingly separate parts of the body are interconnected through fascia and muscles, contributing to our overall structural integrity and function. 
         </p>
+        <Button className="mt-8" href="/practice/back-line" color="blue">
+          Practice
+        </Button>
       </Container>
     </section>
   )
