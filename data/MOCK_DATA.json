@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "workout_date": "7/1/2022",
+    "exercise_name": "yoga",
+    "completed": false,
+    "workout_type": "lateral-lines"
+  },
+  {
+    "id": 2,
+    "workout_date": "7/19/2022",
+    "exercise_name": "running",
+    "completed": true,
+    "workout_type": "lateral-lines"
+  }
+]
