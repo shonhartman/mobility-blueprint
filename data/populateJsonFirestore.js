@@ -1,5 +1,5 @@
 const admin = require('firebase-admin');
-const serviceAccount = require('./mobility-blueprint-431223-742bae2185bd.json');
+const serviceAccount = require('./firebase_credentials.json');
 const data = require('./MOCK_DATA.json');
 
 admin.initializeApp({
