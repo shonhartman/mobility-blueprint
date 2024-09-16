@@ -15,8 +15,13 @@ import { useEffect, useState } from 'react'
 import { collection, getDocs } from 'firebase/firestore'
 import { db } from '../../services/firebase';
 
+interface TestUser {
+  id: string;
+  [key: string]: any;
+}
+
 export default function Home() {
-  const [testData, setTestData] = useState([]);
+  const [testData, setTestData] = useState<TestUser[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
