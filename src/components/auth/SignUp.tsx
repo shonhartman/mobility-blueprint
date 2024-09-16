@@ -10,7 +10,7 @@ export default function SignUp() {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError('');
 
@@ -23,14 +23,22 @@ export default function SignUp() {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             console.log("Sign-up successful", userCredential.user);
             // Redirect or update state on successful sign-up
-        } catch (error) {
-            console.error("Sign-up error:", error);
-            if (error.code === 'auth/email-already-in-use') {
-                setError("An account with this email already exists");
-            } else if (error.code === 'auth/weak-password') {
-                setError("Password should be at least 6 characters");
+        } catch (error: unknown) {
+            if (error instanceof Error) {
+                console.error("Sign-up error:", error);
+                if ('code' in error && typeof error.code === 'string') {
+                    if (error.code === 'auth/email-already-in-use') {
+                        setError("An account with this email already exists");
+                    } else if (error.code === 'auth/weak-password') {
+                        setError("Password should be at least 6 characters");
+                    } else {
+                        setError(error.message);
+                    }
+                } else {
+                    setError("An unexpected error occurred");
+                }
             } else {
-                setError(error.message);
+                setError("An unexpected error occurred");
             }
         }
     };
