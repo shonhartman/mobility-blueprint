@@ -9,10 +9,12 @@ export default function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setError('');
+        setSuccess(false);
 
         if (!email || !password) {
             setError("Please enter both email and password");
@@ -21,8 +23,10 @@ export default function SignUp() {
 
         try {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-            console.log("Sign-up successful", userCredential.user);
-            // Redirect or update state on successful sign-up
+            setSuccess(true);
+            // Clear form fields after successful sign-up
+            setEmail('');
+            setPassword('');
         } catch (error: unknown) {
             if (error instanceof Error) {
                 console.error("Sign-up error:", error);
@@ -43,6 +47,8 @@ export default function SignUp() {
         }
     };
 
+    console.log("Success:", success);
+
     return (
         <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -53,6 +59,11 @@ export default function SignUp() {
 
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-[480px]">
                 <div className="bg-white px-6 py-12 shadow sm:rounded-lg sm:px-12">
+                    {success && (
+                        <div className="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
+                            <span className="font-medium">Success!</span> Your account has been created.
+                        </div>
+                    )}
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
