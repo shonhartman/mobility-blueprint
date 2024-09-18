@@ -11,34 +11,9 @@ import { InnerLines } from '@/components/InnerLines'
 import { LateralLines } from '@/components/LateralLines'
 // import { Exercises } from '@/components/Exercises'
 import { SpiralLine } from '@/components/SpiralLine'
-import { useEffect, useState } from 'react'
-import { collection, getDocs } from 'firebase/firestore'
-import { db } from '../../services/firebase';
-
-interface TestUser {
-  id: string;
-  [key: string]: any;
-}
 
 export default function Home() {
-  const [testData, setTestData] = useState<TestUser[]>([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const testCollectionRef = collection(db, "test-users");
-      const querySnapshot = await getDocs(testCollectionRef);
-      const data = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      console.log({data});
-      setTestData(data);
-    };
-    fetchData();
-  }, []);
-
-  console.log({testData});
-  
   return (
     <>
       <Hero />
