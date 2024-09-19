@@ -1,6 +1,5 @@
 import { Exercises } from "@/components/Exercises";
 
-
 const exerciseData = {
   title: 'Spiral Line Conditioning',
   description: 'By targeting the spiral line fascia, these exercises promote flexibility, strength, and overall health.',
@@ -8,45 +7,45 @@ const exerciseData = {
     {
       name: 'spiralLines1',
       id: 0,
-      // image: spiralLines1,
+      image: '',
     },
     {
       name: 'spiralLines2',
       id: 1,
-      // image: spiralLines2,
+      image: '',
     },
     {
       name: 'spiralLines3',
       id: 2,
-      // image: spiralLines3,
+      image: '',
     },
     {
       name: 'spiralLines4',
       id: 3,
-      // image: spiralLines4,
+      image: '',
     },
     {
-       name: 'spiralLines5',
-       id: 4,
-       // image: spiralLines5,
-     },
-     {
-       name: 'spiralLines6',
-       id: 5,
-       // image: spiralLines6,
-     },
-     {
-       name: 'spiralLines7',
-       id: 6,
-       // image: spiralLines7,
-     },
-     {
-       name: 'spiralLines8',
-       id: 7,
-       // image: spiralLines8,
-     },
+      name: 'spiralLines5',
+      id: 4,
+      image: '',
+    },
+    {
+      name: 'spiralLines6',
+      id: 5,
+      image: '',
+    },
+    {
+      name: 'spiralLines7',
+      id: 6,
+      image: '',
+    },
+    {
+      name: 'spiralLines8',
+      id: 7,
+      image: '',
+    },
   ]
-} 
+}
 
 export default function spiralLinesPage() {
   return (
