@@ -4,6 +4,9 @@ import Image, { type ImageProps } from 'next/image'
 import { Container } from '@/components/Container'
 import { useState, useEffect } from 'react';
 import HomeButton from './HomeButton';
+import { useAuth } from './auth/AuthContext';
+import { saveExerciseData, getExerciseData } from '../../services/database';
+import { log } from 'console';
 
 type ExerciseType = {
   name: string;
@@ -43,29 +46,45 @@ function Exercise({
 
 export function Exercises({ data }: ExercisesProps) {
   const [finishedExercises, setFinishedExercises] = useState<{ exerciseId: number, date: string }[]>([]);
+  const { user } = useAuth(); // Get the current user from AuthContext
+  console.log(user);
 
   useEffect(() => {
-    const storedExercises = localStorage.getItem('finishedExercises');
-    if (storedExercises) {
-      const parsedExercises = JSON.parse(storedExercises);
-      const tenSecondsAgo = new Date();
-      tenSecondsAgo.setSeconds(tenSecondsAgo.getSeconds() - 10);
+    const fetchExercises = async () => {
+      if (user) {
+        try {
+          const exercises = await getExerciseData();
+          const oneMonthAgo = new Date();
+          oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-      const validExercises = parsedExercises.filter((exercise: { date: string }) => {
-        const finishDate = new Date(exercise.date);
-        return finishDate >= tenSecondsAgo;
-      });
+          const validExercises = exercises.filter((exercise: { date: string }) => {
+            const finishDate = new Date(exercise.date);
+            return finishDate >= oneMonthAgo;
+          });
 
-      setFinishedExercises(validExercises);
-      localStorage.setItem('finishedExercises', JSON.stringify(validExercises));
+          setFinishedExercises(validExercises);
+        } catch (error) {
+          console.error("Error fetching exercise data:", error);
+        }
+      }
+    };
+
+    fetchExercises();
+  }, [user]);
+
+  const handleExerciseClick = async (exerciseId: number) => {
+    if (user) {
+      try {
+        await saveExerciseData(exerciseId);
+        const updatedExercises = await getExerciseData();
+        setFinishedExercises(updatedExercises);
+      } catch (error) {
+        console.error("Error saving exercise data:", error);
+      }
+    } else {
+      console.log("User not signed in");
+      // You might want to redirect to sign-in page or show a message
     }
-  }, []);
-
-  const handleExerciseClick = (exerciseId: number) => {
-    const currentDate = new Date().toISOString();
-    const newFinishedExercises = [...finishedExercises, { exerciseId, date: currentDate }];
-    setFinishedExercises(newFinishedExercises);
-    localStorage.setItem('finishedExercises', JSON.stringify(newFinishedExercises));
   };
 
   const isExerciseFinished = (exerciseId: number) => {
@@ -76,14 +95,7 @@ export function Exercises({ data }: ExercisesProps) {
     const oneMonthAgo = new Date();
     oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-    // Test case
-    // const tenSecondsAgo = new Date();
-    // tenSecondsAgo.setSeconds(tenSecondsAgo.getSeconds() - 10);
-    // const isFinished = finishDate >= tenSecondsAgo;
-
-    const isFinished = finishDate >= oneMonthAgo;
-
-    return isFinished;
+    return finishDate >= oneMonthAgo;
   };
 
   return (
