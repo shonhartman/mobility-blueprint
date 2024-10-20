@@ -8,7 +8,7 @@ import { useAuth } from './auth/AuthContext';
 import { saveExerciseData, getExerciseData } from '../../services/database';
 import { log } from 'console';
 
-type ExerciseType = {
+type ExerciseItem = {
   name: string;
   id: number,
   image: ImageProps['src'];
@@ -18,11 +18,16 @@ type ExercisesProps = {
   data: {
     title: string;
     description: string;
-    exercises: ExerciseType[];
+    exercises: ExerciseItem[];
   }
 };
 
-function Exercise({
+interface CompletedExercise {
+  exerciseId: number;
+  date: string;
+}
+
+function ExerciseCard({
   exercise,
   children,
 }: {
@@ -45,24 +50,23 @@ function Exercise({
 }
 
 export function Exercises({ data }: ExercisesProps) {
-  const [finishedExercises, setFinishedExercises] = useState<{ exerciseId: number, date: string }[]>([]);
+  const [completedExercises, setCompletedExercises] = useState<CompletedExercise[]>([]);
   const { user } = useAuth(); // Get the current user from AuthContext
-  console.log(user);
 
   useEffect(() => {
     const fetchExercises = async () => {
       if (user) {
         try {
-          const exercises = await getExerciseData();
+          const fetchedExercises = await getExerciseData() as CompletedExercise[];
           const oneMonthAgo = new Date();
           oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
 
-          const validExercises = exercises.filter((exercise: { date: string }) => {
+          const validExercises = fetchedExercises.filter((exercise) => {
             const finishDate = new Date(exercise.date);
             return finishDate >= oneMonthAgo;
           });
 
-          setFinishedExercises(validExercises);
+          setCompletedExercises(validExercises);
         } catch (error) {
           console.error("Error fetching exercise data:", error);
         }
@@ -76,19 +80,18 @@ export function Exercises({ data }: ExercisesProps) {
     if (user) {
       try {
         await saveExerciseData(exerciseId);
-        const updatedExercises = await getExerciseData();
-        setFinishedExercises(updatedExercises);
+        const updatedExercises = await getExerciseData() as CompletedExercise[];
+        setCompletedExercises(updatedExercises);
       } catch (error) {
         console.error("Error saving exercise data:", error);
       }
     } else {
       console.log("User not signed in");
-      // You might want to redirect to sign-in page or show a message
     }
   };
 
-  const isExerciseFinished = (exerciseId: number) => {
-    const exercise = finishedExercises.find(ex => ex.exerciseId === exerciseId);
+  const isExerciseCompleted = (exerciseId: number) => {
+    const exercise = completedExercises.find(ex => ex.exerciseId === exerciseId);
     if (!exercise) return false;
 
     const finishDate = new Date(exercise.date);
@@ -114,15 +117,15 @@ export function Exercises({ data }: ExercisesProps) {
         className="mx-auto grid max-w-2xl grid-cols-1 gap-8 px-4 lg:max-w-7xl lg:grid-cols-3 lg:px-8"
         style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(350px, 1fr))', gridAutoRows: 'auto' }}
       >
-        {data.exercises.flat().map((exercise) => (
+        {data.exercises.flat().map((exerciseItem) => (
           <li
-            key={exercise.name}
-            onClick={() => handleExerciseClick(exercise.id)}
-            className={isExerciseFinished(exercise.id) ? 'opacity-50' : ''}
+            key={exerciseItem.name}
+            onClick={() => handleExerciseClick(exerciseItem.id)}
+            className={isExerciseCompleted(exerciseItem.id) ? 'opacity-50' : ''}
           >
-            <Exercise exercise={exercise}>
-              {exercise.name}
-            </Exercise>
+            <ExerciseCard exercise={exerciseItem}>
+              {exerciseItem.name}
+            </ExerciseCard>
           </li>
         ))}
       </ul>
