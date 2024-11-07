@@ -55,6 +55,7 @@ export default function SignIn() {
       }
     }
   }
+
   const handleGoogleSignIn = async () => {
     setError('')
     setSuccess(false)
@@ -66,6 +67,21 @@ export default function SignIn() {
         setError(error.message)
       } else {
         setError('An unexpected error occurred during Google sign-in')
+      }
+    }
+  }
+
+  const handleFacebookSignIn = async () => {
+    setError('')
+    setSuccess(false)
+    try {
+      await signInWithPopup(auth, facebookProvider)
+      setSuccess(true)
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message)
+      } else {
+        setError('An unexpected error occurred during Facebook sign-in')
       }
     }
   }
