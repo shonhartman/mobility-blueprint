@@ -170,6 +170,21 @@ export default function SignIn() {
               </span>
             </div>
           </div>
+          {/* Social Sign-In Buttons */}
+          <div className="space-y-2">
+            <button
+              onClick={handleGoogleSignIn}
+              className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+            >
+              Sign in with Google
+            </button>
+            <button
+              onClick={handleFacebookSignIn}
+              className="flex w-full justify-center rounded-md bg-blue-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            >
+              Sign in with Facebook
+            </button>
+          </div>
         </div>
       </div>
     </div>
