@@ -159,7 +159,8 @@ export default function SignIn() {
               </button>
             </div>
           </form>
-          {/* Separator */}
+
+          {/* Separator*/}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-gray-300"></div>
@@ -170,7 +171,8 @@ export default function SignIn() {
               </span>
             </div>
           </div>
-          {/* Social Sign-In Buttons */}
+
+          {/* Social Sign-In Buttons*/}
           <div className="space-y-2">
             <button
               onClick={handleGoogleSignIn}
