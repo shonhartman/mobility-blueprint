@@ -59,28 +59,46 @@ const Dashboard = () => {
             className="rounded-lg border border-gray-300 px-4 py-2"
           />
         </div>
-      </main>
 
-      {/* DASHBOARD WIDGET */}
-      <div className="mb-6 grid grid-cols-3 gap-6">
-        <ActivityCard title="Workout" value="4 hrs" bgColor="bg-blue-500" />
-        <ActivityCard
-          title="Calories"
-          value="1800 kcal"
-          bgColor="bg-orange-500"
-        />
-        <ActivityCard
-          title="Steps"
-          value="2200 steps"
-          bgColor="bg-purple-500"
-        />
-      </div>
-      {/* Goal Progress */}
-      <div className="mb-6 rounded-lg bg-white p-6 shadow-md">
-        <h2 className="text-lg font-semibold text-gray-700">Goal Progress</h2>
-        {/* Placeholder for a bar chart */}
-        <div className="mt-4 h-40 rounded-md bg-gray-200"></div>
-      </div>
+        {/* DASHBOARD WIDGET */}
+        <div className="mb-6 grid grid-cols-3 gap-6">
+          <ActivityCard title="Workout" value="4 hrs" bgColor="bg-blue-500" />
+          <ActivityCard
+            title="Calories"
+            value="1800 kcal"
+            bgColor="bg-orange-500"
+          />
+          <ActivityCard
+            title="Steps"
+            value="2200 steps"
+            bgColor="bg-purple-500"
+          />
+        </div>
+        {/* Goal Progress */}
+        <div className="mb-6 rounded-lg bg-white p-6 shadow-md">
+          <h2 className="text-lg font-semibold text-gray-700">Goal Progress</h2>
+          {/* Placeholder for a bar chart */}
+          <div className="mt-4 h-40 rounded-md bg-gray-200"></div>
+        </div>
+
+        {/* Food Log */}
+        <div className="rounded-lg bg-white p-6 shadow-md">
+          <h2 className="text-lg font-semibold text-gray-700">Food Log</h2>
+          <table className="mt-4 w-full">
+            <thead>
+              <tr>
+                <th className="text-left text-gray-500">Food</th>
+                <th className="text-left text-gray-500">Meal</th>
+                <th className="text-left text-gray-500">Calories</th>
+              </tr>
+            </thead>
+            <tbody>
+              <FoodLogItem food="Burrito" meal="Lunch" calories="350" />
+              <FoodLogItem food="Pizza" meal="Dinner" calories="500" />
+            </tbody>
+          </table>
+        </div>
+      </main>
     </div>
   )
 }
@@ -127,6 +145,25 @@ function ActivityCard({
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-2 text-2xl font-bold">{value}</p>
     </div>
+  )
+}
+
+/* FOOD LOG */
+function FoodLogItem({
+  food,
+  meal,
+  calories,
+}: {
+  food: string
+  meal: string
+  calories: string
+}) {
+  return (
+    <tr className="text-gray-700">
+      <td className="py-2">{food}</td>
+      <td>{meal}</td>
+      <td>{calories}</td>
+    </tr>
   )
 }
 
