@@ -43,9 +43,9 @@ const Dashboard = () => {
         </nav>
       </aside>
 
-      {/* Main Content */}
+      {/* MAIN CONTENT */}
       <main className="flex-1 p-8">
-        {/* Top Navbar */}
+        {/* TOP NAVBAR */}
         <div className="mb-6 flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-gray-700">
@@ -60,6 +60,27 @@ const Dashboard = () => {
           />
         </div>
       </main>
+
+      {/* DASHBOARD WIDGET */}
+      <div className="mb-6 grid grid-cols-3 gap-6">
+        <ActivityCard title="Workout" value="4 hrs" bgColor="bg-blue-500" />
+        <ActivityCard
+          title="Calories"
+          value="1800 kcal"
+          bgColor="bg-orange-500"
+        />
+        <ActivityCard
+          title="Steps"
+          value="2200 steps"
+          bgColor="bg-purple-500"
+        />
+      </div>
+      {/* Goal Progress */}
+      <div className="mb-6 rounded-lg bg-white p-6 shadow-md">
+        <h2 className="text-lg font-semibold text-gray-700">Goal Progress</h2>
+        {/* Placeholder for a bar chart */}
+        <div className="mt-4 h-40 rounded-md bg-gray-200"></div>
+      </div>
     </div>
   )
 }
