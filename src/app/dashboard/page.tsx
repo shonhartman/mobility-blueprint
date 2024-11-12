@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import {
   FaDumbbell,
   FaChartLine,
@@ -16,6 +16,21 @@ import { usePathname } from 'next/navigation'
 
 const Dashboard = () => {
   const [isCollapsed, setIsCollapsed] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsCollapsed(true)
+      } else {
+        setIsCollapsed(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    handleResize() // Check initial window width
+
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed)
@@ -38,7 +53,12 @@ const Dashboard = () => {
         </button>
 
         {/* TITLE AND LOGO */}
-        <Link href="/" className="flex items-center text-blue-500">
+        <Link
+          href="/"
+          className={`flex items-center text-blue-500 ${
+            isCollapsed ? 'justify-center' : ''
+          }`}
+        >
           <FaDumbbell className="text-xl" />
           {!isCollapsed && (
             <h2 className="ml-2 whitespace-nowrap text-xl font-bold">
