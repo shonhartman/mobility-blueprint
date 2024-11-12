@@ -10,6 +10,7 @@ import {
   FaBolt,
   FaChevronLeft,
   FaChevronRight,
+  FaBars,
 } from 'react-icons/fa'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -44,12 +45,16 @@ const Dashboard = () => {
           isCollapsed ? 'w-20' : 'w-64'
         }`}
       >
-        {/* TOGGLE BUTTON */}
+        {/* Toggle Button */}
         <button
           onClick={toggleSidebar}
-          className="flex items-center self-end text-gray-600 hover:text-blue-500 focus:outline-none"
+          className={`flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 ${
+            isCollapsed
+              ? 'bg-blue-100 text-blue-500'
+              : 'bg-transparent text-gray-600'
+          } self-center hover:bg-blue-200 focus:outline-none`}
         >
-          {isCollapsed ? <FaChevronRight /> : <FaChevronLeft />}
+          <FaBars className="text-lg" />
         </button>
 
         {/* TITLE AND LOGO */}
