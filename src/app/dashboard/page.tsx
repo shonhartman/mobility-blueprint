@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import {
   FaDumbbell,
   FaChartLine,
@@ -7,44 +8,82 @@ import {
   FaBullseye,
   FaCalendarAlt,
   FaBolt,
+  FaChevronLeft,
+  FaChevronRight,
 } from 'react-icons/fa'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const Dashboard = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false)
+
+  const toggleSidebar = () => {
+    setIsCollapsed(!isCollapsed)
+  }
+
   return (
     <div className="flex min-h-screen bg-gray-100">
       {/* SIDEBAR */}
+      <aside
+        className={`transition-width flex flex-col space-y-4 border-r border-gray-200 bg-white p-6 duration-300 ${
+          isCollapsed ? 'w-20' : 'w-64'
+        }`}
+      >
+        {/* TOGGLE BUTTON */}
+        <button
+          onClick={toggleSidebar}
+          className="flex items-center self-end text-gray-600 hover:text-blue-500 focus:outline-none"
+        >
+          {isCollapsed ? <FaChevronRight /> : <FaChevronLeft />}
+        </button>
 
-      <aside className="w-64 space-y-4 bg-white p-6">
+        {/* TITLE AND LOGO */}
         <Link href="/" className="flex items-center text-blue-500">
-          <h2 className="text-xl font-bold">
-            Mobility Blueprint <FaDumbbell className="inline text-xl" />
-          </h2>
+          <FaDumbbell className="text-xl" />
+          {!isCollapsed && (
+            <h2 className="ml-2 whitespace-nowrap text-xl font-bold">
+              Mobility Blueprint
+            </h2>
+          )}
         </Link>
+
+        {/* SIDEBAR NAV LINKS */}
         <nav className="mt-8 space-y-4">
           <SidebarLink
             href="/dashboard"
             icon={<FaChartLine />}
             label="Dashboard"
+            isCollapsed={isCollapsed}
           />
-          <SidebarLink href="/exercises" icon={<FaBolt />} label="Exercises" />
+          <SidebarLink
+            href="/exercises"
+            icon={<FaBolt />}
+            label="Exercises"
+            isCollapsed={isCollapsed}
+          />
           <SidebarLink
             href="/diet-plan"
             icon={<FaUtensils />}
             label="Diet Plan"
+            isCollapsed={isCollapsed}
           />
-          <SidebarLink href="/goals" icon={<FaBullseye />} label="Goals" />
+          <SidebarLink
+            href="/goals"
+            icon={<FaBullseye />}
+            label="Goals"
+            isCollapsed={isCollapsed}
+          />
           <SidebarLink
             href="/schedule"
             icon={<FaCalendarAlt />}
             label="My Schedule"
+            isCollapsed={isCollapsed}
           />
         </nav>
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="flex-1 p-8">
+      <main className="flex-1 p-8 transition-all duration-300">
         {/* TOP NAVBAR */}
         <div className="mb-6 flex items-center justify-between">
           <div>
@@ -60,8 +99,8 @@ const Dashboard = () => {
           />
         </div>
 
-        {/* DASHBOARD WIDGET */}
-        <div className="mb-6 grid grid-cols-3 gap-6">
+        {/* DASHBOARD WIDGETS */}
+        <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           <ActivityCard title="Workout" value="4 hrs" bgColor="bg-blue-500" />
           <ActivityCard
             title="Calories"
@@ -74,14 +113,14 @@ const Dashboard = () => {
             bgColor="bg-purple-500"
           />
         </div>
-        {/* Goal Progress */}
+
+        {/* GOAL PROGRESS */}
         <div className="mb-6 rounded-lg bg-white p-6 shadow-md">
           <h2 className="text-lg font-semibold text-gray-700">Goal Progress</h2>
-          {/* Placeholder for a bar chart */}
           <div className="mt-4 h-40 rounded-md bg-gray-200"></div>
         </div>
 
-        {/* Food Log */}
+        {/* FOOD LOG */}
         <div className="rounded-lg bg-white p-6 shadow-md">
           <h2 className="text-lg font-semibold text-gray-700">Food Log</h2>
           <table className="mt-4 w-full">
@@ -99,30 +138,44 @@ const Dashboard = () => {
           </table>
         </div>
       </main>
-      {/* Right Sidebar */}
-      <aside className="w-80 bg-gray-50 p-6">
-        {/* My Schedule */}
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-gray-700">My Schedule</h2>
-          <ScheduleItem day="Monday" activity="Stretch" time="08:00" />
-          <ScheduleItem day="Tuesday" activity="Back Stretch" time="08:00" />
-          <ScheduleItem day="Wednesday" activity="Yoga" time="08:00" />
+
+      {/* RIGHT SIDEBAR */}
+      <aside className="w-80 space-y-6 bg-gray-50 p-6">
+        {/* UPCOMING EXERCISES */}
+        <div className="rounded-lg bg-white p-4 shadow-md">
+          <h2 className="text-lg font-semibold text-gray-700">
+            Upcoming Exercises
+          </h2>
+          <div className="mt-4 space-y-4">
+            <ScheduleItem day="Monday" activity="Stretch" time="08:00 AM" />
+            <ScheduleItem
+              day="Tuesday"
+              activity="Back Stretch"
+              time="08:00 AM"
+            />
+            <ScheduleItem day="Wednesday" activity="Yoga" time="08:00 AM" />
+          </div>
         </div>
 
-        {/* Goals */}
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold text-gray-700">Goals</h2>
-          <GoalItem goal="Running on Track" details="4 Rounds" />
-          <GoalItem goal="Push Ups" details="50 Pieces" />
+        {/* WEEKLY GOALS */}
+        <div className="rounded-lg bg-white p-4 shadow-md">
+          <h2 className="text-lg font-semibold text-gray-700">
+            This Week's Goals
+          </h2>
+          <div className="mt-4 space-y-4">
+            <GoalItem goal="Running on Track" details="4 Rounds" />
+            <GoalItem goal="Push Ups" details="50 Reps" />
+          </div>
         </div>
 
-        {/* Promotion */}
-        <div className="rounded-lg bg-blue-100 p-4 text-center">
-          <p className="font-medium text-gray-700">
-            50% off on Premium Membership
+        {/* PROMOTION */}
+        <div className="rounded-lg bg-gradient-to-r from-blue-500 to-purple-500 p-6 text-center text-white shadow-md">
+          <p className="text-lg font-semibold">50% Off Premium Membership</p>
+          <p className="mt-2 text-sm">
+            Unlock exclusive workouts and diet plans.
           </p>
-          <button className="mt-4 rounded-lg bg-orange-500 px-4 py-2 text-white">
-            Upgrade
+          <button className="mt-4 rounded-lg bg-orange-500 px-6 py-2 font-medium text-white">
+            Upgrade Now
           </button>
         </div>
       </aside>
@@ -134,31 +187,32 @@ interface SidebarLinkProps {
   href: string
   icon: React.ReactNode
   label: string
+  isCollapsed: boolean
 }
 
-const SidebarLink = ({ href, icon, label }: SidebarLinkProps) => {
+const SidebarLink = ({ href, icon, label, isCollapsed }: SidebarLinkProps) => {
   const pathname = usePathname()
-  const isActive =
-    pathname === href || (pathname === '/' && href === '/overview')
+  const isActive = pathname === href
 
   return (
     <Link href={href}>
       <div
-        className={`flex cursor-pointer items-center gap-3 px-4 py-2 transition-colors ${
+        className={`flex items-center gap-3 px-4 py-2 transition-colors ${
+          isCollapsed ? 'justify-center' : 'justify-start'
+        } ${
           isActive
             ? 'bg-blue-200 text-blue-700'
             : 'text-gray-700 hover:bg-blue-100 hover:text-blue-500'
         }`}
       >
         <div className="text-lg">{icon}</div>
-        <span className="font-medium">{label}</span>
+        {!isCollapsed && <span className="font-medium">{label}</span>}
       </div>
     </Link>
   )
 }
 
-/* ACTIVITY CARD */
-function ActivityCard({
+const ActivityCard = ({
   title,
   value,
   bgColor,
@@ -166,7 +220,7 @@ function ActivityCard({
   title: string
   value: string
   bgColor: string
-}) {
+}) => {
   return (
     <div className={`rounded-lg p-4 text-white shadow-md ${bgColor}`}>
       <h3 className="text-lg font-semibold">{title}</h3>
@@ -175,26 +229,7 @@ function ActivityCard({
   )
 }
 
-/* FOOD LOG */
-function FoodLogItem({
-  food,
-  meal,
-  calories,
-}: {
-  food: string
-  meal: string
-  calories: string
-}) {
-  return (
-    <tr className="text-gray-700">
-      <td className="py-2">{food}</td>
-      <td>{meal}</td>
-      <td>{calories}</td>
-    </tr>
-  )
-}
-/* SCHEDULE ITEMS */
-function ScheduleItem({
+const ScheduleItem = ({
   day,
   activity,
   time,
@@ -202,7 +237,7 @@ function ScheduleItem({
   day: string
   activity: string
   time: string
-}) {
+}) => {
   return (
     <div className="mt-2 flex items-center justify-between text-gray-600">
       <div>
@@ -214,13 +249,30 @@ function ScheduleItem({
   )
 }
 
-/* GOAL ITEMS */
-function GoalItem({ goal, details }: { goal: string; details: string }) {
+const GoalItem = ({ goal, details }: { goal: string; details: string }) => {
   return (
     <div className="mt-2 flex items-center justify-between text-gray-600">
       <span>{goal}</span>
       <span className="text-gray-400">{details}</span>
     </div>
+  )
+}
+
+const FoodLogItem = ({
+  food,
+  meal,
+  calories,
+}: {
+  food: string
+  meal: string
+  calories: string
+}) => {
+  return (
+    <tr className="text-gray-700">
+      <td className="py-2">{food}</td>
+      <td>{meal}</td>
+      <td>{calories}</td>
+    </tr>
   )
 }
 
