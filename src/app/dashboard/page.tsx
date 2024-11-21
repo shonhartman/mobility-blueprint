@@ -64,26 +64,6 @@ const Dashboard = () => {
           </h2>
           <div className="mt-4 h-40 rounded-md bg-gray-200"></div>
         </div>
-
-        {/* FOOD LOG */}
-        <div className="mb-6 rounded-lg bg-white p-6 shadow-md">
-          <h2 className="text-lg font-semibold text-gray-700">Food Log</h2>
-          <div className="overflow-x-auto">
-            <table className="mt-4 w-full">
-              <thead>
-                <tr>
-                  <th className="text-left text-gray-500">Food</th>
-                  <th className="text-left text-gray-500">Meal</th>
-                  <th className="text-left text-gray-500">Calories</th>
-                </tr>
-              </thead>
-              <tbody>
-                <FoodLogItem food="Burrito" meal="Lunch" calories="350" />
-                <FoodLogItem food="Pizza" meal="Dinner" calories="500" />
-              </tbody>
-            </table>
-          </div>
-        </div>
       </main>
     </div>
   )
