@@ -11,8 +11,7 @@ import frontLine8 from '@/images/front-line/front_line_8.jpg'
 
 const exerciseData = {
   title: 'Front Line Conditioning',
-  description:
-    'By targeting the superficial front line fascia, these exercises promote flexibility, strength, and overall health.',
+  description: 'By targeting the superficial front line fascia, these exercises promote flexibility, strength, and overall health.',
   exercises: [
     {
       name: 'frontLine1',

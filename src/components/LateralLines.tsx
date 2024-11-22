@@ -56,25 +56,13 @@ export function LateralLines() {
           Lateral lines
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          In the context of the lateral line myofascial meridian, the term
-          "meridian" refers to a continuous pathway of connective tissue, or
-          fascia, that links together various muscles, tendons, and other
-          structures in the body. The "lateral line" specifically refers to a
-          pathway that runs along the side of the body.
+        In the context of the lateral line myofascial meridian, the term "meridian" refers to a continuous pathway of connective tissue, or fascia, that links together various muscles, tendons, and other structures in the body. The "lateral line" specifically refers to a pathway that runs along the side of the body.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          The lateral line myofascial meridian encompasses a series of
-          interconnected muscles and fascial connections that contribute to
-          various aspects of movement and stability. It extends from the side of
-          the head, down the neck and trunk, along the outer hip and thigh, and
-          even down to the outer side of the leg and foot. This pathway plays a
-          key role in lateral flexion (sideways bending) and stabilization of
-          the body.
+        The lateral line myofascial meridian encompasses a series of interconnected muscles and fascial connections that contribute to various aspects of movement and stability. It extends from the side of the head, down the neck and trunk, along the outer hip and thigh, and even down to the outer side of the leg and foot. This pathway plays a key role in lateral flexion (sideways bending) and stabilization of the body.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          By understanding and working with the lateral line myofascial
-          meridian, practitioners can address patterns of tension, restriction,
-          and dysfunction that may be affecting movement and posture.
+        By understanding and working with the lateral line myofascial meridian, practitioners can address patterns of tension, restriction, and dysfunction that may be affecting movement and posture.
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
           Practice

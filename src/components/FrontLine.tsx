@@ -77,23 +77,14 @@ export function FrontLine() {
         <SectionHeading number="3" id="resources-title">
           Solar
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Superficial front line
+           <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        Superficial front line
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          The superficial front line myofascial meridian is a continuous pathway
-          of connective tissue, or fascia, that encompasses the connections
-          between the dorsum of the foot, tibialis anterior, quadriceps, rectus
-          abdominis, solar plexus, the throat, and the face ending at the top of
-          the forehead.
+        The superficial front line myofascial meridian is a continuous pathway of connective tissue, or fascia, that encompasses the connections between the the dorsum of the foot, tibialis anterior, quadriceps, rectus abdominis, solar plexus, the throat, and the face ending at the top of the forehead
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          It extends from the top of the toes, along the front of the body, up
-          through the belly and chest, and ends at the forehead. This pathway is
-          involved in posture, core stability, and forward movement, allowing us
-          to flex and extend our body. By understanding and addressing the
-          superficial front line, practitioners can work with issues related to
-          forward movement, breathing, and postural imbalances.
+        It extends from the top of the toes, along the front of the body, up through the belly and chest, and ends at the forehead. This pathway is involved in posture, core stability, and forward movement, allowing us to flex and extend our body. By understanding and addressing the superficial front line, practitioners can work with issues related to forward movement, breathing, and postural imbalances.
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
           Practice

@@ -124,21 +124,13 @@ export function BackLine() {
           Back Line
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-          Back line
+        Back line
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          The Superficial Back Line (SBL) is a continuous line of connective
-          tissue that runs from the bottom of the foot up through the body to
-          the top of the head. This line includes several interconnected fascial
-          structures and muscles, spanning across various parts of the body.
-          They are essential for maintaining an upright posture and moving the
-          spine.
+        The Superficial Back Line (SBL) is a continuous line of connective tissue that runs from the bottom of the foot up through the body to the top of the head. This line includes several interconnected fascial structures and muscles, spanning across various parts of the body.  They are essential for maintaining an upright posture and moving the spine.
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          The Back Line is significant for its role in posture and movement. It
-          demonstrates how seemingly separate parts of the body are
-          interconnected through fascia and muscles, contributing to our overall
-          structural integrity and function.
+        The Back Line is significant for its role in posture and movement. It demonstrates how seemingly separate parts of the body are interconnected through fascia and muscles, contributing to our overall structural integrity and function. 
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
           Practice

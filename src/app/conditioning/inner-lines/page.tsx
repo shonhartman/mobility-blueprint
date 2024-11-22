@@ -13,8 +13,7 @@ import innerLines10 from '@/images/inner-lines/inner_lines_10.jpg'
 
 const exerciseData = {
   title: 'Inner Lines Conditioning',
-  description:
-    'By targeting the deep front line fascia, these exercises promote flexibility, strength, and overall health.',
+  description: 'By targeting the deep front line fascia, these exercises promote flexibility, strength, and overall health.',
   exercises: [
     {
       name: 'innerLines1',

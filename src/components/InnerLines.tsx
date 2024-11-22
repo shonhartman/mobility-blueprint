@@ -73,17 +73,16 @@ export function InnerLines() {
           The deep front line
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-          The deep front line myofascial meridian is a continuous pathway of
-          connective tissue, or fascia, that travels deep within the body,
-          linking together various muscles, tendons, and structures. It extends
-          from the inside of the feet, up the inner legs, through the pelvis,
-          along the front of the spine, and ends at the base of the skull with
-          the tongue. This pathway is involved in postural support,
-          coordination, and overall body alignment. It plays a significant role
-          in maintaining an upright posture, efficient walking, and stability.
-          By understanding and working with the deep front line, practitioners
-          can address issues related to posture, core stability, and overall
-          body alignment.
+          The deep front line myofascial meridian is a continuous pathway of connective tissue, 
+        or fascia, that travels deep within the body, linking together various muscles, tendons, 
+        and structures. It extends from the inside of the feet, up the inner legs, through the pelvis, 
+
+         along the front of the spine, and ends at the base of the skull with the tongue. 
+        This pathway is involved in postural support, coordination, and overall body alignment. 
+        It plays a significant role in maintaining an upright posture, efficient walking, and stability. 
+
+         By understanding and working with the deep front line, practitioners can address issues 
+        related to posture, core stability, and overall body alignment.
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
           Practice

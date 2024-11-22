@@ -11,8 +11,7 @@ import lateralLines8 from '@/images/lateral-lines/lateral_lines_8.jpg'
 
 const exerciseData = {
   title: 'Lateral Lines Conditioning',
-  description:
-    'By targeting the lateral line fascia, these exercises promote flexibility, strength, and overall health.',
+  description: 'By targeting the lateral line fascia, these exercises promote flexibility, strength, and overall health.',
   exercises: [
     {
       name: 'lateralLines1',
