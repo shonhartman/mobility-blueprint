@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Button } from '@/components/Button'
 import { StarRating } from '@/components/StarRating'
 import coverImage from '@/images/cover.png'
+import { useRouter } from 'next/navigation'
 
 function Testimonial() {
   return (
@@ -12,7 +13,9 @@ function Testimonial() {
       </div>
       <blockquote className="mt-2">
         <p className="font-display text-xl font-medium text-slate-900">
-          “This class literally changed my life. I used to pay for rehab all summer each year until I found this class. This summer I was able to use Dynamic Mobility instead.”
+          “This class literally changed my life. I used to pay for rehab all
+          summer each year until I found this class. This summer I was able to
+          use Dynamic Mobility instead.”
         </p>
       </blockquote>
       <figcaption className="mt-2 text-sm text-slate-500">
@@ -26,6 +29,16 @@ function Testimonial() {
 }
 
 export function Hero() {
+  const router = useRouter()
+
+  const handlePracticeOnline = () => {
+    router.push('/sign-in')
+  }
+
+  const handlePracticeInPerson = () => {
+    router.push('/sign-in')
+  }
+
   return (
     <header className="overflow-hidden bg-slate-100 lg:bg-transparent lg:px-5">
       <div className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 pt-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
@@ -47,10 +60,14 @@ export function Hero() {
               Your blueprint for better movement
             </p>
             <div className="mt-8 flex gap-4">
-              <Button href="#free-chapters" color="blue">
+              <Button color="blue" onClick={handlePracticeOnline}>
                 Practice online
               </Button>
-              <Button href="#back-line" variant="outline" color="blue">
+              <Button
+                color="blue"
+                variant="outline"
+                onClick={handlePracticeInPerson}
+              >
                 Practice in person
               </Button>
             </div>

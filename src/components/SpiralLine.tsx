@@ -5,6 +5,7 @@ import { CheckIcon } from '@/components/CheckIcon'
 import { Container } from '@/components/Container'
 import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
+import { useRouter } from 'next/navigation'
 
 function Plan({
   name,
@@ -105,6 +106,12 @@ function Plan({
 }
 
 export function SpiralLine() {
+  const router = useRouter()
+
+  const handlePracticeClick = () => {
+    router.push('/sign-in')
+  }
+
   return (
     <section
       id="spiral-line"
@@ -116,13 +123,24 @@ export function SpiralLine() {
           Spiral Line
         </SectionHeading>
         <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
-        Spiral line
+          Spiral line
         </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-        The Spiral Line (SL) is a complex myofascial meridian that winds its way around the body in a helical pattern. This line connects various muscles and fascia across the body, contributing to rotational movements and stability.         </p>
+          The Spiral Line (SL) is a complex myofascial meridian that winds its
+          way around the body in a helical pattern. This line connects various
+          muscles and fascia across the body, contributing to rotational
+          movements and stability.
+        </p>
         <p className="mt-4 text-lg tracking-tight text-slate-700">
-        The Spiral Line functions in coordinating complex movements and maintaining balance. It plays a crucial role in distributing mechanical stress throughout the body during movement, especially in actions that involve twisting or rotational forces. The SL highlights how fascial and muscular structures are not just linear or segmented but are instead intricately interconnected, contributing to the body's dynamic stability and movement efficiency.</p>
-        <Button href="/practice/spiral-line" color="blue" className="mt-8">
+          The Spiral Line functions in coordinating complex movements and
+          maintaining balance. It plays a crucial role in distributing
+          mechanical stress throughout the body during movement, especially in
+          actions that involve twisting or rotational forces. The SL highlights
+          how fascial and muscular structures are not just linear or segmented
+          but are instead intricately interconnected, contributing to the body's
+          dynamic stability and movement efficiency.
+        </p>
+        <Button color="blue" className="mt-8" onClick={handlePracticeClick}>
           Practice
         </Button>
       </Container>
