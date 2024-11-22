@@ -1,4 +1,4 @@
-import { Exercises } from "@/components/Exercises";
+import { Exercises } from '@/components/Exercises'
 
 import lateralLines1 from '@/images/lateral-lines/lateral_lines_1.jpg'
 import lateralLines2 from '@/images/lateral-lines/lateral_lines_2.jpg'
@@ -10,8 +10,9 @@ import lateralLines7 from '@/images/lateral-lines/lateral_lines_7.jpg'
 import lateralLines8 from '@/images/lateral-lines/lateral_lines_8.jpg'
 
 const exerciseData = {
-  title: 'Lateral Line Conditioning',
-  description: 'By targeting the lateral line fascia, these exercises promote flexibility, strength, and overall health.',
+  title: 'Lateral Lines Conditioning',
+  description:
+    'By targeting the lateral line fascia, these exercises promote flexibility, strength, and overall health.',
   exercises: [
     {
       name: 'lateralLines1',
@@ -34,30 +35,28 @@ const exerciseData = {
       image: lateralLines4,
     },
     {
-       name: 'lateralLines5',
-       id: 4,
-       image: lateralLines5,
-     },
-     {
-       name: 'lateralLines6',
-       id: 5,
-       image: lateralLines6,
-     },
-     {
-       name: 'lateralLines7',
-       id: 6,
-       image: lateralLines7,
-     },
-     {
-       name: 'lateralLines8',
-       id: 7,
-       image: lateralLines8,
-     },
-  ]
-} 
+      name: 'lateralLines5',
+      id: 4,
+      image: lateralLines5,
+    },
+    {
+      name: 'lateralLines6',
+      id: 5,
+      image: lateralLines6,
+    },
+    {
+      name: 'lateralLines7',
+      id: 6,
+      image: lateralLines7,
+    },
+    {
+      name: 'lateralLines8',
+      id: 7,
+      image: lateralLines8,
+    },
+  ],
+}
 
 export default function LateralLinesPage() {
-  return (
-    <Exercises data={exerciseData} />
-  )
+  return <Exercises data={exerciseData} />
 }

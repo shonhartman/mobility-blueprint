@@ -1,8 +1,9 @@
-import { Exercises } from "@/components/Exercises";
+import { Exercises } from '@/components/Exercises'
 
 const exerciseData = {
   title: 'Back Line Conditioning',
-  description: 'By targeting the back line fascia, these exercises promote flexibility, strength, and overall health.',
+  description:
+    'By targeting the back line fascia, these exercises promote flexibility, strength, and overall health.',
   exercises: [
     {
       name: 'backLines1',
@@ -44,11 +45,9 @@ const exerciseData = {
       id: 7,
       image: '',
     },
-  ]
+  ],
 }
 
 export default function backLinesPage() {
-  return (
-    <Exercises data={exerciseData} />
-  )
+  return <Exercises data={exerciseData} />
 }

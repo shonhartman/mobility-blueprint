@@ -1,4 +1,4 @@
-import { Exercises } from "@/components/Exercises";
+import { Exercises } from '@/components/Exercises'
 
 import innerLines1 from '@/images/inner-lines/inner_lines_1.jpg'
 import innerLines2 from '@/images/inner-lines/inner_lines_2.jpg'
@@ -13,7 +13,8 @@ import innerLines10 from '@/images/inner-lines/inner_lines_10.jpg'
 
 const exerciseData = {
   title: 'Inner Lines Conditioning',
-  description: 'By targeting the deep front line fascia, these exercises promote flexibility, strength, and overall health.',
+  description:
+    'By targeting the deep front line fascia, these exercises promote flexibility, strength, and overall health.',
   exercises: [
     {
       name: 'innerLines1',
@@ -36,40 +37,38 @@ const exerciseData = {
       image: innerLines4,
     },
     {
-       name: 'innerLines5',
-       id: 4,
-       image: innerLines5,
-     },
-     {
-       name: 'innerLines6',
-       id: 5,
-       image: innerLines6,
-     },
-     {
-       name: 'innerLines7',
-       id: 6,
-       image: innerLines7,
-     },
-     {
-       name: 'innerLines8',
-       id: 7,
-       image: innerLines8,
-     },
-     {
-       name: 'innerLines9',
-       id: 8,
-       image: innerLines9,
-     },
-     {
-       name: 'innerLines10',
-       id: 9,
-       image: innerLines10,
-     },
-  ]
-} 
+      name: 'innerLines5',
+      id: 4,
+      image: innerLines5,
+    },
+    {
+      name: 'innerLines6',
+      id: 5,
+      image: innerLines6,
+    },
+    {
+      name: 'innerLines7',
+      id: 6,
+      image: innerLines7,
+    },
+    {
+      name: 'innerLines8',
+      id: 7,
+      image: innerLines8,
+    },
+    {
+      name: 'innerLines9',
+      id: 8,
+      image: innerLines9,
+    },
+    {
+      name: 'innerLines10',
+      id: 9,
+      image: innerLines10,
+    },
+  ],
+}
 
 export default function InnerLinesPage() {
-  return (
-    <Exercises data={exerciseData} />
-  )
+  return <Exercises data={exerciseData} />
 }

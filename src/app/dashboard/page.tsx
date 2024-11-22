@@ -1,9 +1,18 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 const Dashboard = () => {
+  const router = useRouter()
+
+  const linkToConditioning = () => {
+    router.push('/conditioning')
+  }
+
+  const linkToRestorative = () => {
+    router.push('/restorative')
+  }
+
   return (
     <div className="flex min-h-screen flex-col bg-gray-100">
       {/* MAIN CONTENT */}
@@ -27,6 +36,14 @@ const Dashboard = () => {
             <h2 className="text-lg font-semibold text-gray-700">
               Conditioning
             </h2>
+            <div className="mt-4">
+              <button
+                onClick={linkToConditioning}
+                className="inline-block rounded bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400"
+              >
+                See All
+              </button>
+            </div>
             <hr className="my-4 border-t-2 border-black" />
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -43,6 +60,14 @@ const Dashboard = () => {
           {/* Restorative Section */}
           <div className="rounded-lg bg-white p-6 shadow-md">
             <h2 className="text-lg font-semibold text-gray-700">Restorative</h2>
+            <div className="mt-4">
+              <button
+                onClick={linkToRestorative}
+                className="inline-block rounded bg-purple-500 px-4 py-2 text-sm font-semibold text-white hover:bg-purple-400"
+              >
+                See All
+              </button>
+            </div>
             <hr className="my-4 border-t-2 border-black" />
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -83,24 +108,6 @@ const ActivityCard = ({
       <h3 className="text-lg font-semibold">{title}</h3>
       <p className="mt-2 text-2xl font-bold">{value}</p>
     </div>
-  )
-}
-
-const FoodLogItem = ({
-  food,
-  meal,
-  calories,
-}: {
-  food: string
-  meal: string
-  calories: string
-}) => {
-  return (
-    <tr className="text-gray-700">
-      <td className="py-2">{food}</td>
-      <td>{meal}</td>
-      <td>{calories}</td>
-    </tr>
   )
 }
 
