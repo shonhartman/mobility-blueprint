@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { Author } from '@/components/Author'
 import { Footer } from '@/components/Footer'
 // import { FreeChapters } from '@/components/FreeChapters'
@@ -13,7 +13,6 @@ import { LateralLines } from '@/components/LateralLines'
 import { SpiralLine } from '@/components/SpiralLine'
 
 export default function Home() {
-
   return (
     <>
       <Hero />
@@ -37,7 +36,7 @@ export default function Home() {
       <FrontLine />
       {/* <FreeChapters /> */}
       <BackLine />
-      <SpiralLine/>
+      <SpiralLine />
       <Author />
       <Footer />
     </>

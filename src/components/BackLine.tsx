@@ -1,10 +1,12 @@
-import clsx from 'clsx'
+'use client'
 
+import { useRouter } from 'next/navigation'
 import { Button } from '@/components/Button'
-import { CheckIcon } from '@/components/CheckIcon'
 import { Container } from '@/components/Container'
-import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
+import { GridPattern } from '@/components/GridPattern'
+import clsx from 'clsx'
+import { CheckIcon } from './CheckIcon'
 
 function Plan({
   name,
@@ -105,6 +107,12 @@ function Plan({
 }
 
 export function BackLine() {
+  const router = useRouter()
+
+  const handlePracticeClick = () => {
+    router.push('/sign-in')
+  }
+
   return (
     <section
       id="back-line"
@@ -124,10 +132,18 @@ export function BackLine() {
         <p className="mt-4 text-lg tracking-tight text-slate-700">
         The Back Line is significant for its role in posture and movement. It demonstrates how seemingly separate parts of the body are interconnected through fascia and muscles, contributing to our overall structural integrity and function. 
         </p>
-        <Button className="mt-8" href="/practice/back-line" color="blue">
+        <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
           Practice
         </Button>
       </Container>
     </section>
+  )
+}
+
+export default function Page() {
+  return (
+    <div>
+      <BackLine />
+    </div>
   )
 }

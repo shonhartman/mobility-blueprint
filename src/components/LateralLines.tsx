@@ -6,6 +6,7 @@ import {
 } from '@/components/Expandable'
 import { SectionHeading } from '@/components/SectionHeading'
 import { Button } from './Button'
+import { useRouter } from 'next/navigation'
 
 // Seed data for unused tool below
 // const tableOfContents = {
@@ -35,6 +36,12 @@ import { Button } from './Button'
 // }
 
 export function LateralLines() {
+  const router = useRouter()
+
+  const handlePracticeClick = () => {
+    router.push('/sign-in')
+  }
+
   return (
     <section
       id="lateral-lines"
@@ -57,7 +64,7 @@ export function LateralLines() {
         <p className="mt-4 text-lg tracking-tight text-slate-700">
         By understanding and working with the lateral line myofascial meridian, practitioners can address patterns of tension, restriction, and dysfunction that may be affecting movement and posture.
         </p>
-        <Button className='mt-8' href="/practice/lateral-lines" color="blue">
+        <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
           Practice
         </Button>
 
