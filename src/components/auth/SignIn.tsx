@@ -1,5 +1,7 @@
 'use client'
+
 import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import {
   getAuth,
   signInWithEmailAndPassword,
@@ -12,12 +14,14 @@ import { app } from '../../../services/firebase'
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
 const facebookProvider = new FacebookAuthProvider()
+facebookProvider.addScope('email')
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -32,9 +36,8 @@ export default function SignIn() {
     try {
       await signInWithEmailAndPassword(auth, email, password)
       setSuccess(true)
-      // Clear form fields after successful sign-in
-      setEmail('')
-      setPassword('')
+      // Redirect to dashboard
+      router.push('/dashboard')
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error('Sign-in error:', error)
@@ -62,6 +65,7 @@ export default function SignIn() {
     try {
       await signInWithPopup(auth, googleProvider)
       setSuccess(true)
+      router.push('/dashboard')
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message)
@@ -77,6 +81,7 @@ export default function SignIn() {
     try {
       await signInWithPopup(auth, facebookProvider)
       setSuccess(true)
+      router.push('/dashboard')
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message)
@@ -101,8 +106,8 @@ export default function SignIn() {
               className="mb-4 rounded-lg bg-green-50 p-4 text-sm text-green-800"
               role="alert"
             >
-              <span className="font-medium">Success!</span> You have been signed
-              in.
+              <span className="font-medium">Success!</span> Redirecting to your
+              dashboard...
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-6">
