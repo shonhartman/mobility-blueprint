@@ -1,3 +1,5 @@
+import { Rule } from '@sanity/types'
+
 export default {
   name: 'exercise',
   title: 'Exercise',
@@ -7,7 +9,7 @@ export default {
       name: 'name',
       title: 'Name',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
     {
       name: 'description',
@@ -37,6 +39,21 @@ export default {
           { title: 'Core', value: 'core' },
         ],
       },
+    },
+    {
+      name: 'subCategory',
+      title: 'Sub Category',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'Lateral Lines', value: 'lateralLines' },
+          { title: 'Inner Lines', value: 'innerLines' },
+          { title: 'Front Line', value: 'frontLine' },
+          { title: 'Back Line', value: 'backLine' },
+          { title: 'Spiral Line', value: 'spiralLine' },
+        ],
+      },
+      hidden: ({ document }: { document: { category?: string } }) => !['conditioning', 'restorative'].includes(document?.category ?? ''),
     },
   ],
 }
