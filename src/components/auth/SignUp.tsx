@@ -9,6 +9,7 @@ import {
   signInWithPopup,
 } from 'firebase/auth'
 import { app } from '../../../services/firebase'
+import { useRouter } from 'next/navigation'
 
 const auth = getAuth(app)
 const googleProvider = new GoogleAuthProvider()
@@ -19,6 +20,7 @@ export default function SignUp() {
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -40,6 +42,7 @@ export default function SignUp() {
       // Clear form fields after successful sign-up
       setEmail('')
       setPassword('')
+      router.push('/sign-in')
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error('Sign-up error:', error)
@@ -68,6 +71,7 @@ export default function SignUp() {
     try {
       await signInWithPopup(auth, googleProvider)
       setSuccess(true)
+      router.push('/sign-in')
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message)
@@ -83,6 +87,7 @@ export default function SignUp() {
     try {
       await signInWithPopup(auth, facebookProvider)
       setSuccess(true)
+      router.push('/sign-in')
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message)
@@ -107,8 +112,8 @@ export default function SignUp() {
               className="mb-4 rounded-lg bg-green-50 p-4 text-sm text-green-800"
               role="alert"
             >
-              <span className="font-medium">Success!</span> Your account has
-              been created.
+              <span className="font-medium">Success!</span> Redirecting to
+              sign-in page...
             </div>
           )}
           <form onSubmit={handleSubmit} className="space-y-6">
