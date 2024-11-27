@@ -11,7 +11,6 @@ type Exercise = {
 }
 
 export function getExercisesByType(category: string, subCategory: string) {
-  console.log({category, subCategory})
   return EXERCISE_DATA.filter(
     (exercise: Exercise) =>
       exercise.category.toLowerCase() === category.toLowerCase() &&

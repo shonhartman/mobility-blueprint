@@ -20,8 +20,6 @@ const exercises = getExercisesByType('restorative', 'front-line').map((exercise,
   image: images[index] || ''
 }))
 
-console.log({exercises})
-
 const exerciseData = {
   title: 'Front Line Conditioning',
   description:
