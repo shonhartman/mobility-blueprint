@@ -10,7 +10,7 @@ import { log } from 'console';
 
 type ExerciseItem = {
   name: string;
-  id: number,
+  id: string;
   image: ImageProps['src'];
 };
 
@@ -23,7 +23,7 @@ type ExercisesProps = {
 };
 
 interface CompletedExercise {
-  exerciseId: number;
+  exerciseId: string;
   date: string;
 }
 
@@ -76,7 +76,7 @@ export function Exercises({ data }: ExercisesProps) {
     fetchExercises();
   }, [user]);
 
-  const handleExerciseClick = async (exerciseId: number) => {
+  const handleExerciseClick = async (exerciseId: string) => {
     if (user) {
       try {
         await saveExerciseData(exerciseId);
@@ -90,7 +90,7 @@ export function Exercises({ data }: ExercisesProps) {
     }
   };
 
-  const isExerciseCompleted = (exerciseId: number) => {
+  const isExerciseCompleted = (exerciseId: string) => {
     const exercise = completedExercises.find(ex => ex.exerciseId === exerciseId);
     if (!exercise) return false;
 

@@ -5,7 +5,7 @@ import { getAuth } from "firebase/auth";
 const db = getDatabase(app);
 const auth = getAuth(app);
 
-export const saveExerciseData = async (exerciseId: number) => {
+export const saveExerciseData = async (exerciseId: string) => {
   const user = auth.currentUser;
   if (!user) {
     throw new Error("No user is signed in");
