@@ -27,7 +27,7 @@ export function Pattern({
         <symbol id={`${id}-0`} width={size} height={size}>
           <rect className="fill-blue-500" width={size} height={size} />
           <circle
-            className="fill-blue-600"
+            className="fill-blue-900"
             cx={size / 2}
             cy={size / 2}
             r={size * (13 / 40)}
@@ -41,7 +41,7 @@ export function Pattern({
             r={size / 2}
           />
           <rect
-            className="fill-blue-600"
+            className="fill-blue-900"
             width={size / 2}
             height={size / 2}
             x={size / 4}

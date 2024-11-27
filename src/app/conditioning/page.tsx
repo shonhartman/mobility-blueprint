@@ -25,7 +25,7 @@ export default function ConditioningPage() {
           <button
             key={line.name}
             onClick={() => handleNavigation(line.route)}
-            className="rounded-lg bg-blue-400 p-6 text-center text-white shadow-md hover:bg-blue-500 hover:shadow-lg"
+            className="rounded-lg bg-blue-900 p-6 text-center text-white shadow-md hover:bg-blue-500 hover:shadow-lg"
           >
             {line.name}
           </button>

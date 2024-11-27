@@ -10,7 +10,7 @@ export function SectionHeading({
     <h2
       className={clsx(
         className,
-        'inline-flex items-center rounded-full px-4 py-1 text-blue-600 ring-1 ring-inset ring-blue-600',
+        'inline-flex items-center rounded-full px-4 py-1 text-blue-900 ring-1 ring-inset ring-blue-900',
       )}
       {...props}
     >
@@ -18,7 +18,7 @@ export function SectionHeading({
         {number?.padStart(2, '0')}
       </span>
       {number && (
-        <span className="ml-3 h-3.5 w-px bg-blue-600/20" />
+        <span className="ml-3 h-3.5 w-px bg-blue-900/20" />
       )}
       <span className={clsx('text-base font-medium tracking-tight', { 'ml-3': number })}>
         {children}

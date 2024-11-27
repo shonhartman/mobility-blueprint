@@ -26,7 +26,7 @@ function Plan({
     <div
       className={clsx(
         'relative px-4 py-16 sm:rounded-5xl sm:px-10 md:py-12 lg:px-12',
-        featured && 'bg-blue-600 sm:shadow-lg',
+        featured && 'bg-blue-900 sm:shadow-lg',
       )}
     >
       {featured && (
@@ -38,7 +38,7 @@ function Plan({
         <h3
           className={clsx(
             'mt-7 text-lg font-semibold tracking-tight',
-            featured ? 'text-white' : 'text-slate-900',
+            featured ? 'text-white' : 'text-slate-800',
           )}
         >
           {name}
@@ -46,7 +46,7 @@ function Plan({
         <p
           className={clsx(
             'mt-2 text-lg tracking-tight',
-            featured ? 'text-white' : 'text-slate-600',
+            featured ? 'text-white' : 'text-slate-800',
           )}
         >
           {description}
@@ -63,7 +63,7 @@ function Plan({
           <span
             className={clsx(
               'ml-1 mt-1 text-7xl tracking-tight',
-              featured ? 'text-white' : 'text-slate-900',
+              featured ? 'text-white' : 'text-slate-800',
             )}
           >
             {price}
@@ -76,7 +76,7 @@ function Plan({
               '-my-2 divide-y text-base tracking-tight',
               featured
                 ? 'divide-white/10 text-white'
-                : 'divide-slate-200 text-slate-900',
+                : 'divide-slate-200 text-slate-800',
             )}
           >
             {features.map((feature) => (
@@ -84,7 +84,7 @@ function Plan({
                 <CheckIcon
                   className={clsx(
                     'h-8 w-8 flex-none',
-                    featured ? 'fill-white' : 'fill-slate-600',
+                    featured ? 'fill-white' : 'fill-slate-800',
                   )}
                 />
                 <span className="ml-4">{feature}</span>
@@ -122,9 +122,9 @@ export function SpiralLine() {
         <SectionHeading number="4" id="spiral-line-title">
           Spiral Line
         </SectionHeading>
-       <p className="mt-4 text-lg tracking-tight text-slate-700">
+       <p className="mt-4 text-lg tracking-tight text-slate-800">
         The Spiral Line (SL) is a complex myofascial meridian that winds its way around the body in a helical pattern. This line connects various muscles and fascia across the body, contributing to rotational movements and stability.         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         The Spiral Line functions in coordinating complex movements and maintaining balance. It plays a crucial role in distributing mechanical stress throughout the body during movement, especially in actions that involve twisting or rotational forces. The SL highlights how fascial and muscular structures are not just linear or segmented but are instead intricately interconnected, contributing to the body's dynamic stability and movement efficiency.</p>
         <Button href="/practice/spiral-line" color="blue" className="mt-8">
           Practice

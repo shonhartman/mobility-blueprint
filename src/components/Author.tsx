@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 import { GridPattern } from '@/components/GridPattern'
 import { SectionHeading } from '@/components/SectionHeading'
-import authorImage from '@/images/avatars/author.png'
+import authorImage from '@/images/avatars/author.jpg'
 
 function InstagramIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -20,7 +20,7 @@ export function Author() {
       aria-labelledby="author-title"
       className="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
     >
-      <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-900/10 [mask-image:linear-gradient(transparent,white)]">
+      <div className="absolute inset-x-0 bottom-0 top-1/2 text-slate-800/10 [mask-image:linear-gradient(transparent,white)]">
         <GridPattern x="50%" y="100%" />
       </div>
       <div className="relative mx-auto max-w-5xl pt-16 sm:px-6">
@@ -37,10 +37,10 @@ export function Author() {
             <SectionHeading id="author-title">
               Author
             </SectionHeading>
-            <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-900 sm:text-6xl">
-              <span className="block text-blue-600">Shaun Hartman –</span> Creator of ‘Mobility Blueprint’.
+            <p className="mt-8 font-display text-5xl font-extrabold tracking-tight text-slate-800 sm:text-6xl">
+              <span className="block text-blue-900">Shaun Hartman –</span> Creator of ‘Mobility Blueprint’.
             </p>
-            <p className="mt-4 text-lg tracking-tight text-slate-700">
+            <p className="mt-4 text-lg tracking-tight text-slate-800">
               I’ve been designing this practice for 7 years. I have been incorporating it
               into an extremely busy schedule with a demanding 40 hour per week job and 
               3 kids that need my utmost attention while also finding time for personal expression
@@ -50,7 +50,7 @@ export function Author() {
             <p className="mt-8">
               <Link
                 href="#"
-                className="inline-flex items-center text-base font-medium tracking-tight text-blue-600"
+                className="inline-flex items-center text-base font-medium tracking-tight text-blue-900"
               >
                 <InstagramIcon className="h-10 w-10 fill-current" />
                 <span className="ml-4">Follow on Instagram</span>

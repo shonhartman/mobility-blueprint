@@ -52,16 +52,16 @@ export function LateralLines() {
         <SectionHeading number="1" id="lateral-lines-title">
           Root
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-800">
           Lateral lines
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         In the context of the lateral line myofascial meridian, the term "meridian" refers to a continuous pathway of connective tissue, or fascia, that links together various muscles, tendons, and other structures in the body. The "lateral line" specifically refers to a pathway that runs along the side of the body.
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         The lateral line myofascial meridian encompasses a series of interconnected muscles and fascial connections that contribute to various aspects of movement and stability. It extends from the side of the head, down the neck and trunk, along the outer hip and thigh, and even down to the outer side of the leg and foot. This pathway plays a key role in lateral flexion (sideways bending) and stabilization of the body.
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         By understanding and working with the lateral line myofascial meridian, practitioners can address patterns of tension, restriction, and dysfunction that may be affecting movement and posture.
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
@@ -74,7 +74,7 @@ export function LateralLines() {
             <ExpandableItems>
               {Object.entries(tableOfContents).map(([title, pages]) => (
                 <li key={title}>
-                  <h3 className="font-display text-3xl font-bold tracking-tight text-slate-900">
+                  <h3 className="font-display text-3xl font-bold tracking-tight text-slate-800">
                     {title}
                   </h3>
                   <ol
@@ -88,7 +88,7 @@ export function LateralLines() {
                         aria-label={`${title} on page ${pageNumber}`}
                       >
                         <span
-                          className="font-medium text-slate-900"
+                          className="font-medium text-slate-800"
                           aria-hidden="true"
                         >
                           {title}

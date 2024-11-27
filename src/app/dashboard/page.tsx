@@ -39,7 +39,7 @@ const Dashboard = () => {
             <div className="mt-4">
               <button
                 onClick={linkToConditioning}
-                className="inline-block rounded bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-400"
+                className="inline-block rounded bg-blue-500 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-900"
               >
                 See All
               </button>
@@ -51,7 +51,7 @@ const Dashboard = () => {
                   key={`conditioning-${i}`}
                   title={`Conditioning ${i + 1}`}
                   value=""
-                  bgColor="bg-blue-400"
+                  bgColor="bg-blue-900"
                 />
               ))}
             </div>

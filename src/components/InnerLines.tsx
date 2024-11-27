@@ -69,10 +69,10 @@ export function InnerLines() {
         <SectionHeading number="2" id="inner-lines-title">
           Inner Lines
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-800">
           The deep front line
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
           The deep front line myofascial meridian is a continuous pathway of connective tissue, 
         or fascia, that travels deep within the body, linking together various muscles, tendons, 
         and structures. It extends from the inside of the feet, up the inner legs, through the pelvis, 
@@ -118,10 +118,10 @@ export function InnerLines() {
                   </time>
                 </div>
               </div>
-              <h3 className="mt-8 text-base font-medium tracking-tight text-slate-900 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
+              <h3 className="mt-8 text-base font-medium tracking-tight text-slate-800 before:mb-2 before:block before:font-mono before:text-sm before:text-slate-500 before:content-[counter(video,decimal-leading-zero)]">
                 {video.title}
               </h3>
-              <p className="mt-2 text-sm text-slate-600">{video.description}</p>
+              <p className="mt-2 text-sm text-slate-800">{video.description}</p>
             </li>
           ))}
         </ol>

@@ -35,7 +35,7 @@ function ExerciseCard({
   children: React.ReactNode
 }) {
   return (
-  <figure className="rounded-4xl shadow-md ring-1 ring-slate-900/5 flex flex-col">
+  <figure className="rounded-4xl shadow-md ring-1 ring-slate-800/5 flex flex-col">
     <div className="bg-slate-50 flex-grow rounded-4xl overflow-hidden">
       <Image
         className="h-full w-full object-cover"
@@ -104,10 +104,10 @@ export function Exercises({ data }: ExercisesProps) {
   return (
     <section className="py-8 sm:py-10 lg:py-16">
       <Container className="mb-8 text-center">
-        <h2 className="font-display text-4xl font-bold tracking-tight text-slate-900">
+        <h2 className="font-display text-4xl font-bold tracking-tight text-slate-800">
           {data.title}
         </h2>
-        <p className="mt-4 text-lg tracking-tight text-slate-600">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
           {data.description}
         </p>
         <HomeButton />

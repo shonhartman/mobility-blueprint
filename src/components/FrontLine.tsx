@@ -77,13 +77,13 @@ export function FrontLine() {
         <SectionHeading number="3" id="resources-title">
           Solar
         </SectionHeading>
-           <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+           <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-800">
         Superficial front line
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         The superficial front line myofascial meridian is a continuous pathway of connective tissue, or fascia, that encompasses the connections between the the dorsum of the foot, tibialis anterior, quadriceps, rectus abdominis, solar plexus, the throat, and the face ending at the top of the forehead
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         It extends from the top of the toes, along the front of the body, up through the belly and chest, and ends at the forehead. This pathway is involved in posture, core stability, and forward movement, allowing us to flex and extend our body. By understanding and addressing the superficial front line, practitioners can work with issues related to forward movement, breathing, and postural imbalances.
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
@@ -105,10 +105,10 @@ export function FrontLine() {
                 <resource.image />
               </div>
               <div>
-                <h3 className="text-base font-medium tracking-tight text-slate-900">
+                <h3 className="text-base font-medium tracking-tight text-slate-800">
                   {resource.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate-600">
+                <p className="mt-2 text-sm text-slate-800">
                   {resource.description}
                 </p>
               </div>

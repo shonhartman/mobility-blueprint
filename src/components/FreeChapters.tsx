@@ -7,7 +7,7 @@ export function FreeChapters() {
     <section
       id="free-chapters"
       aria-label="Free preview"
-      className="scroll-mt-14 bg-blue-600 sm:scroll-mt-32"
+      className="scroll-mt-14 bg-blue-900 sm:scroll-mt-32"
     >
       <div className="overflow-hidden lg:relative">
         <Container

@@ -27,7 +27,7 @@ function Plan({
     <div
       className={clsx(
         'relative px-4 py-16 sm:rounded-5xl sm:px-10 md:py-12 lg:px-12',
-        featured && 'bg-blue-600 sm:shadow-lg',
+        featured && 'bg-blue-900 sm:shadow-lg',
       )}
     >
       {featured && (
@@ -39,7 +39,7 @@ function Plan({
         <h3
           className={clsx(
             'mt-7 text-lg font-semibold tracking-tight',
-            featured ? 'text-white' : 'text-slate-900',
+            featured ? 'text-white' : 'text-slate-800',
           )}
         >
           {name}
@@ -47,7 +47,7 @@ function Plan({
         <p
           className={clsx(
             'mt-2 text-lg tracking-tight',
-            featured ? 'text-white' : 'text-slate-600',
+            featured ? 'text-white' : 'text-slate-800',
           )}
         >
           {description}
@@ -64,7 +64,7 @@ function Plan({
           <span
             className={clsx(
               'ml-1 mt-1 text-7xl tracking-tight',
-              featured ? 'text-white' : 'text-slate-900',
+              featured ? 'text-white' : 'text-slate-800',
             )}
           >
             {price}
@@ -77,7 +77,7 @@ function Plan({
               '-my-2 divide-y text-base tracking-tight',
               featured
                 ? 'divide-white/10 text-white'
-                : 'divide-slate-200 text-slate-900',
+                : 'divide-slate-200 text-slate-800',
             )}
           >
             {features.map((feature) => (
@@ -85,7 +85,7 @@ function Plan({
                 <CheckIcon
                   className={clsx(
                     'h-8 w-8 flex-none',
-                    featured ? 'fill-white' : 'fill-slate-600',
+                    featured ? 'fill-white' : 'fill-slate-800',
                   )}
                 />
                 <span className="ml-4">{feature}</span>
@@ -123,13 +123,13 @@ export function BackLine() {
         <SectionHeading number="4" id="back-line-title">
           Back Line
         </SectionHeading>
-        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-900">
+        <p className="mt-8 font-display text-4xl font-bold tracking-tight text-slate-800">
         Back line
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         The Superficial Back Line (SBL) is a continuous line of connective tissue that runs from the bottom of the foot up through the body to the top of the head. This line includes several interconnected fascial structures and muscles, spanning across various parts of the body.  They are essential for maintaining an upright posture and moving the spine.
         </p>
-        <p className="mt-4 text-lg tracking-tight text-slate-700">
+        <p className="mt-4 text-lg tracking-tight text-slate-800">
         The Back Line is significant for its role in posture and movement. It demonstrates how seemingly separate parts of the body are interconnected through fascia and muscles, contributing to our overall structural integrity and function. 
         </p>
         <Button className="mt-8" color="blue" onClick={handlePracticeClick}>
