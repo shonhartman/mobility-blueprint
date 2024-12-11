@@ -1,35 +1,51 @@
 # Dependency directories
-/node_modules
+node_modules/
+functions/node_modules/
 
 # Next.js build output
-/.next
+.next/
+out/
 
-# dotenv environment variables file
+# Build outputs
+dist/
+build/
+lib/
+
+# Environment files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Log files
+# Debug logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+firebase-debug.log*
+ui-debug.log*
 
-# Editor directories and files
-.idea
-.vscode
+# IDE and editor files
+.idea/
+.vscode/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-*.log
 
-# Directories used by tools like jest, parcel, storybook, and netlify
-/coverage
-/.cache
-/.parcel-cache
-.storybook-out
-/public/hmr
-/public/out
-/dist
-
-# Ignore .DS_Store files
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Firebase cache
+.firebase/
+*.cache
+
+# Sanity
+/studio/dist

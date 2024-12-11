@@ -6,42 +6,42 @@ const exerciseData = {
   exercises: [
     {
       name: 'spiralLines1',
-      id: 0,
+      id: '0',
       image: '',
     },
     {
       name: 'spiralLines2',
-      id: 1,
+      id: '1',
       image: '',
     },
     {
       name: 'spiralLines3',
-      id: 2,
+      id: '2',
       image: '',
     },
     {
       name: 'spiralLines4',
-      id: 3,
+      id: '3',
       image: '',
     },
     {
       name: 'spiralLines5',
-      id: 4,
+      id: '4',
       image: '',
     },
     {
       name: 'spiralLines6',
-      id: 5,
+      id: '5',
       image: '',
     },
     {
       name: 'spiralLines7',
-      id: 6,
+      id: '6',
       image: '',
     },
     {
       name: 'spiralLines8',
-      id: 7,
+      id: '7',
       image: '',
     },
   ],

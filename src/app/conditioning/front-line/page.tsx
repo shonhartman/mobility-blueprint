@@ -15,42 +15,42 @@ const exerciseData = {
   exercises: [
     {
       name: 'frontLine1',
-      id: 0,
+      id: '0',
       image: frontLine1,
     },
     {
-      name: 'frontLine2',
-      id: 1,
+      name: 'frontLine2', 
+      id: '1',
       image: frontLine2,
     },
     {
       name: 'frontLine3',
-      id: 2,
+      id: '2',
       image: frontLine3,
     },
     {
       name: 'frontLine4',
-      id: 3,
+      id: '3',
       image: frontLine4,
     },
     {
       name: 'frontLine5',
-      id: 4,
+      id: '4',
       image: frontLine5,
     },
     {
       name: 'frontLine6',
-      id: 5,
+      id: '5',
       image: frontLine6,
     },
     {
       name: 'frontLine7',
-      id: 6,
+      id: '6',
       image: frontLine7,
     },
     {
       name: 'frontLine8',
-      id: 7,
+      id: '7',
       image: frontLine8,
     },
   ],
