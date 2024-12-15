@@ -15,42 +15,42 @@ const exerciseData = {
   exercises: [
     {
       name: 'lateralLines1',
-      id: 0,
+      id: '0',
       image: lateralLines1,
     },
     {
       name: 'lateralLines2',
-      id: 1,
+      id: '1',
       image: lateralLines2,
     },
     {
       name: 'lateralLines3',
-      id: 2,
+      id: '2',
       image: lateralLines3,
     },
     {
       name: 'lateralLines4',
-      id: 3,
+      id: '3',
       image: lateralLines4,
     },
     {
       name: 'lateralLines5',
-      id: 4,
+      id: '4',
       image: lateralLines5,
     },
     {
       name: 'lateralLines6',
-      id: 5,
+      id: '5',
       image: lateralLines6,
     },
     {
       name: 'lateralLines7',
-      id: 6,
+      id: '6',
       image: lateralLines7,
     },
     {
       name: 'lateralLines8',
-      id: 7,
+      id: '7',
       image: lateralLines8,
     },
   ],

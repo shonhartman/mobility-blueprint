@@ -18,52 +18,52 @@ const exerciseData = {
   exercises: [
     {
       name: 'innerLines1',
-      id: 0,
+      id: '0',
       image: innerLines1,
     },
     {
       name: 'innerLines2',
-      id: 1,
+      id: '1',
       image: innerLines2,
     },
     {
       name: 'innerLines3',
-      id: 2,
+      id: '2',
       image: innerLines3,
     },
     {
       name: 'innerLines4',
-      id: 3,
+      id: '3',
       image: innerLines4,
     },
     {
       name: 'innerLines5',
-      id: 4,
+      id: '4',
       image: innerLines5,
     },
     {
       name: 'innerLines6',
-      id: 5,
+      id: '5',
       image: innerLines6,
     },
     {
       name: 'innerLines7',
-      id: 6,
+      id: '6',
       image: innerLines7,
     },
     {
       name: 'innerLines8',
-      id: 7,
+      id: '7',
       image: innerLines8,
     },
     {
       name: 'innerLines9',
-      id: 8,
+      id: '8',
       image: innerLines9,
     },
     {
       name: 'innerLines10',
-      id: 9,
+      id: '9',
       image: innerLines10,
     },
   ],
