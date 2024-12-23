@@ -6,7 +6,6 @@ import { useState, useEffect } from 'react';
 import HomeButton from './HomeButton';
 import { useAuth } from './auth/AuthContext';
 import { saveExerciseData, getExerciseData } from '../../services/database';
-import { log } from 'console';
 
 type ExerciseItem = {
   name: string;

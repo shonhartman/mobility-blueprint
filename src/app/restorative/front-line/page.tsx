@@ -1,3 +1,6 @@
+// This file doesn't require changes since it doesn't contain any exercise IDs directly.
+// The ID conversions need to happen in the source data accessed by getExercisesByType()
+
 import { Exercises } from '@/components/Exercises'
 import { getExercisesByType } from '@/utils/exercises'
 
