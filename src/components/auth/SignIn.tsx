@@ -5,16 +5,10 @@ import { useRouter } from 'next/navigation'
 import {
   getAuth,
   signInWithEmailAndPassword,
-  GoogleAuthProvider,
-  FacebookAuthProvider,
-  signInWithPopup,
 } from 'firebase/auth'
 import { app } from '../../../services/firebase'
 
 const auth = getAuth(app)
-const googleProvider = new GoogleAuthProvider()
-const facebookProvider = new FacebookAuthProvider()
-facebookProvider.addScope('email')
 
 export default function SignIn() {
   const [email, setEmail] = useState('')
@@ -55,38 +49,6 @@ export default function SignIn() {
         }
       } else {
         setError('An unexpected error occurred')
-      }
-    }
-  }
-
-  const handleGoogleSignIn = async () => {
-    setError('')
-    setSuccess(false)
-    try {
-      await signInWithPopup(auth, googleProvider)
-      setSuccess(true)
-      router.push('/dashboard')
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message)
-      } else {
-        setError('An unexpected error occurred during Google sign-in')
-      }
-    }
-  }
-
-  const handleFacebookSignIn = async () => {
-    setError('')
-    setSuccess(false)
-    try {
-      await signInWithPopup(auth, facebookProvider)
-      setSuccess(true)
-      router.push('/dashboard')
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        setError(error.message)
-      } else {
-        setError('An unexpected error occurred during Facebook sign-in')
       }
     }
   }
@@ -164,34 +126,6 @@ export default function SignIn() {
               </button>
             </div>
           </form>
-
-          {/* Separator*/}
-          <div className="relative my-6">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-300"></div>
-            </div>
-            <div className="relative flex justify-center text-sm">
-              <span className="bg-white px-2 text-gray-500">
-                Or continue with
-              </span>
-            </div>
-          </div>
-
-          {/* Social Sign-In Buttons*/}
-          <div className="space-y-2">
-            <button
-              onClick={handleGoogleSignIn}
-              className="flex w-full justify-center rounded-md bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-            >
-              Sign in with Google
-            </button>
-            <button
-              onClick={handleFacebookSignIn}
-              className="flex w-full justify-center rounded-md bg-blue-900 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-900"
-            >
-              Sign in with Facebook
-            </button>
-          </div>
         </div>
       </div>
     </div>
